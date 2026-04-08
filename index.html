@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosetta Systems | Inevitable Conversion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Inter"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    },
+                    colors: {
+                        matte: '#030303',
+                        surface: '#0a0a0a',
+                        border: '#1a1a1a',
+                        warm: {
+                            DEFAULT: '#e5a970',
+                            glow: 'rgba(229, 169, 112, 0.15)',
+                            strong: 'rgba(229, 169, 112, 0.3)'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #030303;
+            color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        ::selection {
+            background-color: rgba(229, 169, 112, 0.2);
+            color: #e5a970;
+        }
+
+        .cinematic-reveal {
+            opacity: 0;
+            filter: blur(12px);
+            transform: translateY(40px);
+            transition: opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                        filter 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                        transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        
+        .cinematic-reveal.visible {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateY(0);
+        }
+
+        .fade-in-slow {
+            opacity: 0;
+            transition: opacity 2s ease-in-out, text-shadow 2s ease-in-out;
+        }
+        
+        .fade-in-slow.visible {
+            opacity: 1;
+        }
+
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+        .delay-500 { transition-delay: 500ms; }
+        .delay-800 { transition-delay: 800ms; }
+
+        .glass-nav {
+            background: rgba(3, 3, 3, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+        }
+
+        .btn-glow {
+            transition: all 0.4s ease;
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+            transform: scale(1.02);
+        }
+        .btn-warm-glow {
+            transition: all 0.4s ease;
+        }
+        .btn-warm-glow:hover {
+            border-color: rgba(229, 169, 112, 0.4);
+            box-shadow: 0 0 30px rgba(229, 169, 112, 0.1);
+            transform: scale(1.02);
+        }
+
+        .proof-card {
+            transition: transform 0.45s ease, border-color 0.45s ease, box-shadow 0.45s ease, background-color 0.45s ease;
+        }
+        .proof-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(229, 169, 112, 0.18);
+            box-shadow: 0 0 35px rgba(229, 169, 112, 0.05);
+            background-color: rgba(255, 255, 255, 0.01);
+        }
+
+        .demo-card {
+            transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease;
+        }
+        .demo-card:hover {
+            transform: translateY(-4px) scale(1.01);
+            box-shadow: 0 0 40px rgba(229, 169, 112, 0.08);
+            border-color: rgba(229, 169, 112, 0.2);
+        }
+
+        input:-webkit-autofill,
+        textarea:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 30px #030303 inset !important;
+            -webkit-text-fill-color: white !important;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+    </style>
+</head>
+<body class="bg-matte">
+
+    <script>
+       const CONFIG = {
+    phoneDisplay: '07411 641772',
+    phoneHref: 'tel:07411641772',
+    whatsappHref: 'https://wa.me/447411641772',
+    demoPrimaryUrl: 'https://modern-business-corporate-landing-l.vercel.app',
+    demoSecondaryUrl: 'https://homecare-plumbers-luton-landing.vercel.app'
+};
+        };
+    </script>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
+            <div class="flex items-baseline gap-2">
+                <span class="font-serif italic text-2xl tracking-wide text-white">Rosetta</span>
+                <span class="text-[10px] tracking-[0.3em] uppercase text-neutral-500 font-medium">Systems</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-10 text-xs tracking-widest uppercase font-medium text-neutral-500">
+                <a href="#solution" class="hover:text-warm transition-colors duration-300">Method</a>
+                <a href="#demo" class="hover:text-warm transition-colors duration-300">Motion</a>
+                <a href="#contact" class="text-white hover:text-warm transition-colors duration-300">Initiate</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. HERO SECTION -->
+    <section class="min-h-screen flex flex-col justify-center px-6 relative overflow-hidden pt-20">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[radial-gradient(ellipse_at_top,rgba(229,169,112,0.06),transparent_60%)] pointer-events-none"></div>
+        
+        <div class="max-w-5xl mx-auto text-center relative z-10 w-full">
+            <h1 class="text-5xl md:text-7xl lg:text-[5.5rem] font-medium tracking-tight mb-8 leading-[1.1] text-white cinematic-reveal">
+                Websites built to turn visitors into <span class="text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-500">direct calls.</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto mb-16 cinematic-reveal delay-200 font-light leading-relaxed">
+                Most businesses lose customers after they land on their page. <br class="hidden md:block"/>
+                We make sure they don't.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6 cinematic-reveal delay-400">
+                <a href="#demo" class="w-full sm:w-auto px-10 py-4 bg-white text-black font-medium tracking-wide text-sm uppercase btn-glow">
+                    View Demo
+                </a>
+                <a href="#final-cta" class="w-full sm:w-auto px-10 py-4 border border-border bg-transparent text-white font-medium tracking-wide text-sm uppercase btn-warm-glow">
+                    Get More Calls
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BRAND STATEMENT -->
+    <section class="py-24 relative border-t border-white/[0.02]">
+        <div class="max-w-4xl mx-auto text-center fade-in-slow">
+            <span class="font-serif italic text-3xl md:text-4xl text-warm drop-shadow-[0_0_15px_rgba(229,169,112,0.3)]">Rosetta</span> 
+            <span class="text-neutral-600 tracking-[0.3em] uppercase text-xs ml-4 align-middle">— set in stone.</span>
+        </div>
+    </section>
+
+    <!-- 2. PROBLEM SECTION -->
+    <section class="py-40 px-6">
+        <div class="max-w-4xl mx-auto text-center flex flex-col items-center justify-center">
+            <div class="space-y-8 mb-32">
+                <h2 class="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-neutral-700 cinematic-reveal">
+                    They land.
+                </h2>
+                <h2 class="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-neutral-500 cinematic-reveal delay-200">
+                    They hesitate.
+                </h2>
+                <h2 class="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-neutral-300 cinematic-reveal delay-400">
+                    They leave.
+                </h2>
+            </div>
+            
+            <div class="w-[1px] h-24 bg-gradient-to-b from-transparent via-neutral-700 to-transparent mb-32 cinematic-reveal delay-500"></div>
+            
+            <h2 class="text-3xl md:text-5xl lg:text-6xl font-serif italic text-warm/90 tracking-wide cinematic-reveal delay-800 drop-shadow-[0_0_20px_rgba(229,169,112,0.1)]">
+                Or they call someone else.
+            </h2>
+        </div>
+    </section>
+
+    <!-- 3. SOLUTION SECTION -->
+    <section id="solution" class="py-40 px-6 bg-surface border-y border-white/[0.02] relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.01)_0,transparent_100%)]"></div>
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <div class="space-y-12">
+                <h2 class="text-3xl md:text-5xl lg:text-6xl font-medium tracking-tight text-neutral-500 cinematic-reveal">
+                    We don't focus on getting you seen.
+                </h2>
+                <h2 class="text-3xl md:text-5xl lg:text-6xl font-medium tracking-tight text-white cinematic-reveal delay-200">
+                    We focus on what happens after.
+                </h2>
+            </div>
+            
+            <div class="mt-40 cinematic-reveal delay-400">
+                <p class="text-2xl md:text-4xl font-light tracking-tight text-warm/80 leading-relaxed">
+                    When someone lands on your page<br/>
+                    <span class="font-serif italic text-white text-3xl md:text-5xl mt-4 block">they call.</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. HOW IT WORKS -->
+    <section class="py-40 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-16 md:gap-8 mb-32">
+                <div class="cinematic-reveal text-center md:text-left">
+                    <div class="text-xs font-medium text-warm tracking-[0.2em] mb-6">01</div>
+                    <h3 class="text-2xl md:text-3xl font-light text-white tracking-tight">We build it</h3>
+                </div>
+                <div class="cinematic-reveal delay-200 text-center md:text-left">
+                    <div class="text-xs font-medium text-warm tracking-[0.2em] mb-6">02</div>
+                    <h3 class="text-2xl md:text-3xl font-light text-white tracking-tight">You see it</h3>
+                </div>
+                <div class="cinematic-reveal delay-400 text-center md:text-left">
+                    <div class="text-xs font-medium text-warm tracking-[0.2em] mb-6">03</div>
+                    <h3 class="text-2xl md:text-3xl font-light text-white tracking-tight">You decide</h3>
+                </div>
+            </div>
+            
+            <div class="text-center cinematic-reveal delay-500">
+                <p class="text-sm tracking-[0.2em] uppercase text-neutral-500 font-medium">
+                    No upfront. No pressure.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4.5 ARCHITECTURE / FLOW -->
+    <section class="py-40 px-6 bg-surface border-y border-white/[0.02]">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+            <div class="proof-card border border-white/[0.04] bg-matte/40 p-8 md:p-10 cinematic-reveal">
+                <div class="flex items-center gap-3 mb-8">
+                    <i data-lucide="phone-call" class="w-5 h-5 text-warm"></i>
+                    <h3 class="text-sm tracking-[0.3em] uppercase text-neutral-500 font-medium">Direct Call Architecture</h3>
+                </div>
+                <p class="text-2xl md:text-3xl text-white font-light tracking-tight leading-relaxed mb-10">
+                    Customer lands.<br>
+                    Sees what they need.<br>
+                    <span class="text-warm font-serif italic">Calls instantly.</span>
+                </p>
+                <div class="grid grid-cols-3 gap-4 text-center">
+                    <div class="border border-white/[0.04] px-4 py-5 bg-white/[0.01]">
+                        <div class="text-[10px] tracking-[0.25em] uppercase text-neutral-500 mb-2">01</div>
+                        <div class="text-sm text-white font-medium">Land</div>
+                    </div>
+                    <div class="border border-white/[0.04] px-4 py-5 bg-white/[0.01]">
+                        <div class="text-[10px] tracking-[0.25em] uppercase text-neutral-500 mb-2">02</div>
+                        <div class="text-sm text-white font-medium">See</div>
+                    </div>
+                    <div class="border border-white/[0.04] px-4 py-5 bg-white/[0.01]">
+                        <div class="text-[10px] tracking-[0.25em] uppercase text-neutral-500 mb-2">03</div>
+                        <div class="text-sm text-white font-medium">Call</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="proof-card border border-white/[0.04] bg-matte/40 p-8 md:p-10 cinematic-reveal delay-200">
+                <div class="flex items-center gap-3 mb-8">
+                    <i data-lucide="arrow-right-left" class="w-5 h-5 text-warm"></i>
+                    <h3 class="text-sm tracking-[0.3em] uppercase text-neutral-500 font-medium">Frictionless Flow</h3>
+                </div>
+                <p class="text-2xl md:text-3xl text-white font-light tracking-tight leading-relaxed mb-10">
+                    No confusion.<br>
+                    No wasted time.<br>
+                    <span class="text-warm font-serif italic">No unnecessary steps.</span>
+                </p>
+                <div class="space-y-4 text-neutral-400 text-sm tracking-wide uppercase">
+                    <div class="flex items-center justify-between border-b border-white/[0.04] pb-4">
+                        <span>Instant clarity</span>
+                        <i data-lucide="chevron-right" class="w-4 h-4 text-warm"></i>
+                    </div>
+                    <div class="flex items-center justify-between border-b border-white/[0.04] pb-4">
+                        <span>Visible proof</span>
+                        <i data-lucide="chevron-right" class="w-4 h-4 text-warm"></i>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span>Direct action</span>
+                        <i data-lucide="chevron-right" class="w-4 h-4 text-warm"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. DEMO SECTION -->
+    <section id="demo" class="py-40 px-6 bg-surface border-t border-white/[0.02]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-24 cinematic-reveal">
+                <h2 class="text-sm tracking-[0.3em] uppercase text-neutral-500 font-medium mb-4">Observation</h2>
+                <h3 class="text-4xl md:text-5xl font-serif italic text-white">See it in motion</h3>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 cinematic-reveal delay-200">
+                <a href="https://modern-business-corporate-landing-l.vercel.app" target="_blank" rel="noopener noreferrer" class="demo-card group relative overflow-hidden bg-matte block">
+                    <img src="https://placehold.co/1200x800/050505/ffffff?text=Direct+Call+Architecture" alt="Direct Call Architecture Demo" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 ease-out filter grayscale group-hover:grayscale-0">
+                    <div class="absolute inset-0 border border-white/5 group-hover:border-warm/20 group-hover:shadow-[inset_0_0_40px_rgba(229,169,112,0.1)] transition-all duration-700 pointer-events-none"></div>
+                    <div class="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+                        <div class="flex items-center justify-between gap-4">
+                            <div>
+                                <p class="text-[10px] tracking-[0.3em] uppercase text-neutral-400 mb-2">Demo Preview</p>
+                                <h4 class="text-2xl font-light text-white">Direct Call Architecture</h4>
+                            </div>
+                            <i data-lucide="arrow-up-right" class="w-5 h-5 text-warm shrink-0"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://homecare-plumbers-luton-landing.vercel.app" target="_blank" rel="noopener noreferrer" class="demo-card group relative overflow-hidden bg-matte block">
+                    <img src="https://placehold.co/1200x800/050505/ffffff?text=Frictionless+Flow" alt="Frictionless Flow Demo" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 ease-out filter grayscale group-hover:grayscale-0">
+                    <div class="absolute inset-0 border border-white/5 group-hover:border-warm/20 group-hover:shadow-[inset_0_0_40px_rgba(229,169,112,0.1)] transition-all duration-700 pointer-events-none"></div>
+                    <div class="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+                        <div class="flex items-center justify-between gap-4">
+                            <div>
+                                <p class="text-[10px] tracking-[0.3em] uppercase text-neutral-400 mb-2">Demo Preview</p>
+                                <h4 class="text-2xl font-light text-white">Frictionless Flow</h4>
+                            </div>
+                            <i data-lucide="arrow-up-right" class="w-5 h-5 text-warm shrink-0"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. VALUE SECTION -->
+    <section class="py-40 px-6">
+        <div class="max-w-4xl mx-auto text-center cinematic-reveal">
+            <h2 class="text-3xl md:text-5xl lg:text-6xl font-light tracking-tight leading-tight text-white">
+                If this brings you even a couple of extra direct jobs — <br class="hidden md:block"/>
+                <span class="text-neutral-500 italic font-serif mt-4 block">it pays for itself.</span>
+            </h2>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-40 bg-surface border-t border-white/[0.02]">
+        <div class="max-w-2xl mx-auto px-6">
+            <div class="text-center mb-20 cinematic-reveal">
+                <h2 class="text-sm tracking-[0.3em] uppercase text-warm font-medium mb-4">Initiate</h2>
+                <h3 class="text-4xl font-light text-white tracking-tight">Request a Review</h3>
+            </div>
+            
+            <form id="contact-form" class="space-y-12 cinematic-reveal delay-200">
+                <div class="space-y-8">
+                    <div class="relative group">
+                        <input type="text" id="name" name="name" required class="w-full bg-transparent border-b border-white/10 py-4 text-white text-lg font-light focus:outline-none focus:border-warm transition-colors peer placeholder-transparent" placeholder="Name">
+                        <label for="name" class="absolute left-0 top-4 text-neutral-500 font-light text-lg transition-all peer-focus:-top-6 peer-focus:text-xs peer-focus:text-warm peer-focus:tracking-widest peer-focus:uppercase peer-valid:-top-6 peer-valid:text-xs peer-valid:text-neutral-500 peer-valid:tracking-widest peer-valid:uppercase pointer-events-none">Name</label>
+                    </div>
+                    
+                    <div class="relative group">
+                        <input type="email" id="email" name="email" required class="w-full bg-transparent border-b border-white/10 py-4 text-white text-lg font-light focus:outline-none focus:border-warm transition-colors peer placeholder-transparent" placeholder="Email">
+                        <label for="email" class="absolute left-0 top-4 text-neutral-500 font-light text-lg transition-all peer-focus:-top-6 peer-focus:text-xs peer-focus:text-warm peer-focus:tracking-widest peer-focus:uppercase peer-valid:-top-6 peer-valid:text-xs peer-valid:text-neutral-500 peer-valid:tracking-widest peer-valid:uppercase pointer-events-none">Email Address</label>
+                    </div>
+
+                    <div class="relative group">
+                        <textarea id="message" name="message" rows="1" required class="w-full bg-transparent border-b border-white/10 py-4 text-white text-lg font-light focus:outline-none focus:border-warm transition-colors peer placeholder-transparent resize-none overflow-hidden" placeholder="Website URL & Challenge" oninput="this.style.height = '';this.style.height = this.scrollHeight + 'px'"></textarea>
+                        <label for="message" class="absolute left-0 top-4 text-neutral-500 font-light text-lg transition-all peer-focus:-top-6 peer-focus:text-xs peer-focus:text-warm peer-focus:tracking-widest peer-focus:uppercase peer-valid:-top-6 peer-valid:text-xs peer-valid:text-neutral-500 peer-valid:tracking-widest peer-valid:uppercase pointer-events-none">Website URL & Current Challenge</label>
+                    </div>
+                </div>
+
+                <button type="submit" id="submit-btn" class="w-full py-5 bg-white text-black font-medium tracking-wide text-sm uppercase btn-glow mt-8">
+                    Send Request
+                </button>
+                <p id="form-status" class="text-sm tracking-wide text-center mt-6 h-6 font-light"></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- 7. FINAL CTA -->
+    <section id="final-cta" class="py-40 px-6 text-center">
+        <div class="max-w-3xl mx-auto cinematic-reveal">
+            <h2 class="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight mb-16 text-white">
+                Start getting more <br class="hidden md:block"/><span class="font-serif italic text-warm">direct calls.</span>
+            </h2>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a data-phone-link href="tel:07411641772" class="w-full sm:w-auto px-12 py-5 bg-white text-black font-medium tracking-wide text-sm uppercase flex items-center justify-center gap-3 btn-glow">
+                    <i data-lucide="phone" class="w-4 h-4"></i> Call Now
+                </a>
+                <a data-whatsapp-link href="https://wa.me/447411641772" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-12 py-5 border border-border bg-transparent text-white font-medium tracking-wide text-sm uppercase flex items-center justify-center gap-3 btn-warm-glow">
+                    <i data-lucide="message-square" class="w-4 h-4"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. FOOTER -->
+    <footer class="py-16 px-8 border-t border-white/[0.02] bg-matte">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-baseline gap-2 opacity-50">
+                <span class="font-serif italic text-xl tracking-wide text-white">Rosetta</span>
+                <span class="text-[9px] tracking-[0.3em] uppercase text-white font-medium">Systems</span>
+            </div>
+            
+            <div class="flex gap-8 text-xs tracking-widest uppercase text-neutral-600 font-medium">
+                <a href="mailto:contact@rosettasystems.com" class="hover:text-warm transition-colors duration-300">Email</a>
+                <a data-phone-link href="tel:07411641772" class="hover:text-warm transition-colors duration-300">Direct</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.cinematic-reveal, .fade-in-slow').forEach((elem) => {
+            observer.observe(elem);
+        });
+
+        document.querySelectorAll('[data-phone-link]').forEach(link => {
+            link.href = CONFIG.phoneHref;
+        });
+
+        document.querySelectorAll('[data-whatsapp-link]').forEach(link => {
+            link.href = CONFIG.whatsappHref;
+        });
+
+        document.querySelectorAll('[data-demo-link="primary"]').forEach(link => {
+            link.href = CONFIG.demoPrimaryUrl;
+        });
+
+        document.querySelectorAll('[data-demo-link="secondary"]').forEach(link => {
+            link.href = CONFIG.demoSecondaryUrl;
+        });
+
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+        const submitBtn = document.getElementById('submit-btn');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<span class="animate-pulse">Transmitting...</span>';
+                submitBtn.disabled = true;
+                submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                
+                try {
+                    const formData = new FormData(contactForm);
+                    const response = await fetch('https://zgnpmogdjnnhpwewavnr.supabase.co/functions/v1/contact-form-submit', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            projectId: '{{PROJECT_ID}}',
+                            name: formData.get('name'),
+                            email: formData.get('email'),
+                            message: formData.get('message')
+                        })
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (response.ok) {
+                        formStatus.textContent = 'Received. We will be in touch.';
+                        formStatus.className = 'text-sm tracking-wide text-center mt-6 h-6 font-light text-warm';
+                        contactForm.reset();
+                        const textarea = document.getElementById('message');
+                        if (textarea) textarea.style.height = '';
+                    } else {
+                        formStatus.textContent = data.error || 'Transmission failed.';
+                        formStatus.className = 'text-sm tracking-wide text-center mt-6 h-6 font-light text-red-500/80';
+                    }
+                } catch (error) {
+                    formStatus.textContent = 'Connection error. Please call directly.';
+                    formStatus.className = 'text-sm tracking-wide text-center mt-6 h-6 font-light text-red-500/80';
+                } finally {
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                        submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                    }, 1000);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
