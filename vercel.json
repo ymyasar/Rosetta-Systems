@@ -1,4 +1,24 @@
 {
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{"type": "host", "value": "rosettasystemsuk.co.uk"}],
+      "destination": "https://www.rosettasystems.co/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [{"type": "host", "value": "www.rosettasystemsuk.co.uk"}],
+      "destination": "https://www.rosettasystems.co/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [{"type": "host", "value": "rosettasystems.co"}],
+      "destination": "https://www.rosettasystems.co/$1",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
