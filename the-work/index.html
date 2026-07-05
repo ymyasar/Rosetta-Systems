@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8MKQVLLV7L"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8MKQVLLV7L');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Work — Commissioned Looks &amp; Collections | Rosetta Systems</title>
+    <meta name="description" content="Every Rosetta site begins from the Standard — then styled to one photographer, one look, one city. Explore the Rosetta Standard and our four commissioned collections.">
+    <link rel="canonical" href="https://www.rosettasystems.co/the-work" />
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Rosetta Systems">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="The Work — Commissioned Looks &amp; Collections | Rosetta Systems">
+    <meta property="og:description" content="Every Rosetta site begins from the Standard — then styled to one photographer, one look, one city. Explore the Rosetta Standard and our four commissioned collections.">
+    <meta property="og:url" content="https://www.rosettasystems.co/the-work">
+    <meta property="og:site_name" content="Rosetta Systems">
+    <meta property="og:image" content="https://www.rosettasystems.co/public/images/work/elodie-standard.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Work — Commissioned Looks &amp; Collections | Rosetta Systems">
+    <meta name="twitter:description" content="Every Rosetta site begins from the Standard — then styled to one photographer, one look, one city.">
+    <meta name="twitter:image" content="https://www.rosettasystems.co/public/images/work/elodie-standard.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@0.383.0/dist/umd/lucide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Inter"', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                    },
+                    colors: {
+                        matte: '#1A1108',
+                        surface: '#E0D8CA',
+                        border: 'rgba(26,17,8,0.1)',
+                        warm: {
+                            DEFAULT: '#8B6C4F',
+                            glow: 'rgba(139,108,79,0.15)',
+                            strong: 'rgba(139,108,79,0.3)'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --bg-primary: #E8E0D3;
+            --bg-deep: #1A1108;
+            --bg-surface: #E0D8CA;
+            --accent: #8B6C4F;
+            --accent-light: rgba(139,108,79,0.15);
+            --text-primary: #1A1108;
+            --text-secondary: #6B5744;
+            --text-inverse: #E8E0D3;
+            --border: rgba(26,17,8,0.1);
+        }
+
+        html, body { overflow-x: hidden; max-width: 100%; }
+
+        body { background-color: #E8E0D3; color: #1A1108; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+        ::selection { background-color: rgba(139,108,79,0.2); color: #8B6C4F; }
+
+        /* ── Preserve Rosetta logotype in Playfair Display ── */
+        #site-nav .font-serif { font-family: 'Playfair Display', serif; color: #1A1108; }
+        footer .font-serif { font-family: 'Playfair Display', serif; }
+        #site-nav .text-neutral-500 { color: #6B5744 !important; }
+
+        /* Nav is always visible on sub-pages */
+        #site-nav {
+            background: rgba(232,224,211,0.95);
+            border-bottom: 1px solid rgba(139,108,79,0.2);
+        }
+        .nav-link { color: var(--text-primary); transition: color 0.3s ease, opacity 0.3s ease; }
+        .nav-link:hover { opacity: 0.6; }
+
+        /* ── Animations ── */
+        .cinematic-reveal {
+            opacity: 0;
+            filter: blur(12px);
+            transform: translateY(40px);
+            transition: opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+                        filter 1.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+                        transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .cinematic-reveal.visible { opacity: 1; filter: blur(0); transform: translateY(0); }
+
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+        .delay-500 { transition-delay: 500ms; }
+
+        /* ── Buttons ── */
+        .btn-primary { transition: opacity 0.3s ease, transform 0.3s ease; }
+        .btn-primary:hover { opacity: 0.82; transform: scale(1.02); }
+
+        /* ── Cards ── */
+        .collection-card {
+            transition: border-color 0.45s ease, box-shadow 0.45s ease;
+            min-width: 0;
+            overflow: hidden;
+        }
+        .collection-card:hover {
+            border-color: rgba(139,108,79,0.3) !important;
+            box-shadow: 0 8px 40px rgba(26,17,8,0.07);
+        }
+
+        /* ── Grain texture overlay ── */
+        .grain-overlay { position: relative; }
+        .grain-overlay::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.035;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* ── Image placeholder (displays if image file not yet present) ── */
+        .img-placeholder {
+            display: block;
+            width: 100%;
+            background: rgba(26,17,8,0.06);
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="site-nav" class="fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
+            <a href="/" style="text-decoration:none;cursor:pointer;" class="flex items-baseline gap-2">
+                <span class="font-serif italic text-2xl tracking-wide">Rosetta</span>
+                <span class="text-[10px] tracking-[0.3em] uppercase text-neutral-500 font-medium">Systems</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-10 text-xs tracking-widest uppercase font-light">
+                <a href="/the-work" class="nav-link">The Work</a>
+                <a href="/#solution" class="nav-link">Method</a>
+                <a href="/#contact" class="nav-link">Initiate</a>
+                <a href="/blog/" class="nav-link">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ── HERO ──────────────────────────────────── -->
+    <section class="min-h-[60vh] flex flex-col justify-center px-6 relative overflow-hidden pt-20 grain-overlay" style="background:#E8E0D3;">
+        <div class="max-w-5xl mx-auto relative z-10 w-full">
+
+            <hr style="border:none;border-top:1px solid rgba(26,17,8,0.12);margin:48px 0;">
+
+            <div class="text-center text-[9px] tracking-[0.55em] uppercase font-light mb-12 cinematic-reveal" style="color:var(--accent);">
+                Rosetta Systems — The Work
+            </div>
+
+            <div class="hero-text-wrapper" style="border-left:1px solid rgba(139,108,79,0.3);padding-left:32px;">
+                <h1 class="text-5xl md:text-7xl lg:text-[5.5rem] font-light font-serif tracking-tight mb-10 leading-[1.08] cinematic-reveal delay-200" style="color:var(--text-primary);">
+                    The Work
+                </h1>
+                <p class="text-lg md:text-xl mb-8 cinematic-reveal delay-300 font-light leading-relaxed max-w-2xl" style="color:var(--text-secondary);">
+                    Every Rosetta site begins from the Standard — then it's styled to one photographer, one look, one city.
+                </p>
+            </div>
+
+            <hr style="border:none;border-top:1px solid rgba(26,17,8,0.12);margin:48px 0;">
+        </div>
+
+        <div style="position:absolute;bottom:40px;right:40px;font-family:'Inter',sans-serif;font-weight:300;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(26,17,8,0.3);">EST. MMXXV</div>
+    </section>
+
+    <!-- ── THE STANDARD FEATURED BLOCK ──────────── -->
+    <section class="py-[120px] px-6 grain-overlay" style="background:#E0D8CA;border-top:1px solid var(--border);">
+        <div class="max-w-5xl mx-auto relative z-[2]">
+
+            <div class="text-center mb-16 cinematic-reveal">
+                <div class="text-[9px] tracking-[0.55em] uppercase font-light mb-6" style="color:var(--accent);">The Rosetta Standard</div>
+                <h2 class="text-3xl md:text-4xl font-serif italic font-light tracking-tight" style="color:var(--text-primary);">The foundation every commission is built on.</h2>
+            </div>
+
+            <div class="cinematic-reveal delay-200" style="max-width:800px;margin:0 auto;">
+                <!-- TODO Yasar: drop Élodie Standard hero here -->
+                <img src="/public/images/work/elodie-standard.jpg" alt="Élodie — The Rosetta Standard commissioned look" class="img-placeholder" style="min-height:480px;">
+            </div>
+
+            <div class="text-center mt-10 cinematic-reveal delay-400">
+                <p class="text-sm font-light mb-6 leading-relaxed" style="color:var(--text-secondary);">
+                    The Rosetta Standard — the foundation every commission is built on.
+                </p>
+                <a href="https://rosetta-template-wedding.vercel.app/" target="_blank" rel="noopener noreferrer"
+                   class="text-[9px] tracking-[0.4em] uppercase font-light transition-opacity duration-300 hover:opacity-60"
+                   style="color:var(--accent);">
+                    View the live site →
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── FOUR COLLECTIONS ──────────────────────── -->
+    <section class="py-[120px] px-6 grain-overlay" style="background:#E8E0D3;border-top:1px solid var(--border);">
+        <div class="max-w-6xl mx-auto relative z-[2]">
+
+            <div class="text-center mb-20 cinematic-reveal">
+                <div class="text-[9px] tracking-[0.55em] uppercase font-light mb-6" style="color:var(--accent);">Four Commissioned Looks</div>
+                <h2 class="text-3xl md:text-4xl font-serif italic font-light tracking-tight" style="color:var(--text-primary);">One finish. One city. One photographer.</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!-- NOIR -->
+                <div class="collection-card p-10 cinematic-reveal" style="background:var(--bg-surface);border:1px solid var(--border);">
+                    <!-- TODO Yasar: drop noir image here -->
+                    <img src="/public/images/work/noir.jpg" alt="Noir commissioned look — cinematic and moody" class="img-placeholder mb-8" style="min-height:280px;">
+                    <div class="text-[9px] tracking-[0.45em] uppercase font-light mb-4" style="color:var(--accent);">Noir</div>
+                    <p class="text-base font-light leading-relaxed" style="color:var(--text-secondary);">
+                        Candlelight and shadow. For work that leans cinematic and moody.
+                    </p>
+                </div>
+
+                <!-- GALLERY -->
+                <div class="collection-card p-10 cinematic-reveal delay-100" style="background:var(--bg-surface);border:1px solid var(--border);">
+                    <!-- TODO Yasar: drop gallery image here -->
+                    <img src="/public/images/work/gallery.jpg" alt="Gallery commissioned look — white space and restraint" class="img-placeholder mb-8" style="min-height:280px;">
+                    <div class="text-[9px] tracking-[0.45em] uppercase font-light mb-4" style="color:var(--accent);">Gallery</div>
+                    <p class="text-base font-light leading-relaxed" style="color:var(--text-secondary);">
+                        White space and restraint. The portfolio as an exhibition.
+                    </p>
+                </div>
+
+                <!-- BLUSH -->
+                <div class="collection-card p-10 cinematic-reveal delay-200" style="background:var(--bg-surface);border:1px solid var(--border);">
+                    <!-- TODO Yasar: drop blush image here -->
+                    <img src="/public/images/work/blush.jpg" alt="Blush commissioned look — soft, light-filled, romantic" class="img-placeholder mb-8" style="min-height:280px;">
+                    <div class="text-[9px] tracking-[0.45em] uppercase font-light mb-4" style="color:var(--accent);">Blush</div>
+                    <p class="text-base font-light leading-relaxed" style="color:var(--text-secondary);">
+                        Soft, light-filled, romantic. Made for pastels and golden hour.
+                    </p>
+                </div>
+
+                <!-- HERITAGE -->
+                <div class="collection-card p-10 cinematic-reveal delay-300" style="background:var(--bg-surface);border:1px solid var(--border);">
+                    <!-- TODO Yasar: drop heritage image here -->
+                    <img src="/public/images/work/heritage.jpg" alt="Heritage commissioned look — old-world editorial" class="img-placeholder mb-8" style="min-height:280px;">
+                    <div class="text-[9px] tracking-[0.45em] uppercase font-light mb-4" style="color:var(--accent);">Heritage</div>
+                    <p class="text-base font-light leading-relaxed" style="color:var(--text-secondary);">
+                        Old-world editorial. Timeless, serif-heavy, built for luxury venues.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-16 cinematic-reveal delay-400">
+                <p class="text-sm font-light leading-relaxed" style="color:var(--text-secondary);">
+                    One photographer per look, per city. When it's claimed, it's gone.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── CTA ──────────────────────────────────── -->
+    <section class="py-[120px] px-6 text-center grain-overlay" style="background:radial-gradient(ellipse at 50% 0%, #251A0E 0%, #1A1108 60%);border-top:1px solid rgba(139,108,79,0.12);">
+        <div class="max-w-2xl mx-auto cinematic-reveal">
+            <div class="text-[9px] tracking-[0.55em] uppercase font-light mb-12" style="color:var(--accent);">Initiate</div>
+            <h2 class="text-3xl md:text-4xl font-serif italic font-light tracking-tight mb-14" style="color:var(--text-inverse);">
+                Claim your look before<br class="hidden md:block"/> someone else in your city does.
+            </h2>
+            <a href="/#contact"
+               class="inline-block px-12 py-5 font-light tracking-[0.4em] text-xs uppercase btn-primary"
+               style="background:var(--accent);color:var(--text-inverse);">
+                Book your discovery call
+            </a>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ─────────────────────────────────── -->
+    <div style="height:1px;background:rgba(242,237,228,0.15);"></div>
+    <footer class="px-8" style="background:radial-gradient(ellipse at 50% 0%, #251A0E 0%, #1A1108 60%);border-top:1px solid rgba(139,108,79,0.1);">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8" style="padding-top:60px;padding-bottom:60px;">
+            <div class="flex items-baseline gap-2">
+                <span class="font-serif italic text-xl tracking-wide text-white">Rosetta</span>
+                <span class="text-[9px] tracking-[0.3em] uppercase text-neutral-500 font-medium">Systems</span>
+            </div>
+            <div>
+                <a href="mailto:contact@rosettasystems.co" class="text-xs tracking-widest uppercase font-light transition-opacity duration-300 hover:opacity-60" style="color:var(--text-secondary);">contact@rosettasystems.co</a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto text-center" style="margin-bottom:20px;">
+            <p style="font-family:'Inter',sans-serif;font-weight:300;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(242,237,228,0.3);">Websites for photographers — Texas &amp; beyond.</p>
+        </div>
+        <div class="max-w-7xl mx-auto pb-8 text-center" style="border-top:1px solid rgba(139,108,79,0.08);">
+            <p class="pt-6 text-[9px] tracking-[0.35em] uppercase font-light" style="color:var(--text-secondary);">
+                © MMXXV Rosetta Systems. All rights reserved.
+                <a href="/privacy" style="margin-left:1.6em;font-family:'Inter',sans-serif;font-weight:300;font-size:inherit;letter-spacing:inherit;text-transform:inherit;color:var(--text-secondary);text-decoration:none;transition:opacity 0.3s ease;" onmouseover="this.style.opacity='0.5'" onmouseout="this.style.opacity='1'">Privacy Policy</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        (function(){
+            var nav = document.getElementById('site-nav');
+            window.addEventListener('scroll', function(){
+                nav.classList.toggle('scrolled', window.scrollY > 80);
+            }, { passive: true });
+
+            document.querySelectorAll('section:first-of-type .cinematic-reveal').forEach(function(el){
+                setTimeout(function(){ el.classList.add('visible'); }, 300);
+            });
+        })();
+    </script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.to(".hero-text-wrapper", {
+            yPercent: -20, ease: "none",
+            scrollTrigger: { trigger: ".hero-text-wrapper", start: "top top", end: "bottom top", scrub: true }
+        });
+
+        document.querySelectorAll('.cinematic-reveal').forEach(function(el){
+            ScrollTrigger.create({
+                trigger: el,
+                start: 'top 88%',
+                onEnter: function(){ el.classList.add('visible'); }
+            });
+        });
+    </script>
+
+</body>
+</html>
