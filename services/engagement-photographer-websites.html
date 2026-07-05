@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8MKQVLLV7L"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8MKQVLLV7L');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engagement Photographer Website Design | Rosetta Systems</title>
+    <meta name="description" content="Websites for engagement and couples photographers — built to rank for local searches and turn sessions into full wedding bookings. Free mockup first.">
+    <link rel="canonical" href="https://www.rosettasystems.co/services/engagement-photographer-websites" />
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Rosetta Systems">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Engagement Photographer Website Design | Rosetta Systems">
+    <meta property="og:description" content="Websites for engagement and couples photographers — built to rank for local searches and turn sessions into full wedding bookings. Free mockup first.">
+    <meta property="og:url" content="https://www.rosettasystems.co/services/engagement-photographer-websites">
+    <meta property="og:site_name" content="Rosetta Systems">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Inter"', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                    },
+                    colors: {
+                        matte: '#1A1108',
+                        surface: '#E0D8CA',
+                        border: 'rgba(26,17,8,0.1)',
+                        warm: {
+                            DEFAULT: '#8B6C4F',
+                            glow: 'rgba(139,108,79,0.15)',
+                            strong: 'rgba(139,108,79,0.3)'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --bg-primary: #E8E0D3;
+            --bg-deep: #1A1108;
+            --bg-surface: #E0D8CA;
+            --accent: #8B6C4F;
+            --accent-light: rgba(139,108,79,0.15);
+            --text-primary: #1A1108;
+            --text-secondary: #6B5744;
+            --text-inverse: #E8E0D3;
+            --border: rgba(26,17,8,0.1);
+        }
+        html, body { overflow-x: hidden; max-width: 100%; }
+        body { background-color: #E8E0D3; color: #1A1108; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        ::selection { background-color: rgba(139,108,79,0.2); color: #8B6C4F; }
+        #site-nav .font-serif { font-family: 'Playfair Display', serif; color: #1A1108; }
+        footer .font-serif { font-family: 'Playfair Display', serif; }
+        #site-nav .text-neutral-500 { color: #6B5744 !important; }
+        #site-nav {
+            background: rgba(232,224,211,0.95);
+            border-bottom: 1px solid rgba(139,108,79,0.2);
+        }
+        .nav-link { color: var(--text-primary); transition: color 0.3s ease, opacity 0.3s ease; }
+        .nav-link:hover { opacity: 0.6; }
+        .cinematic-reveal { opacity: 0; filter: blur(12px); transform: translateY(40px); transition: opacity 1.2s cubic-bezier(0.2,0.8,0.2,1), filter 1.2s cubic-bezier(0.2,0.8,0.2,1), transform 1.2s cubic-bezier(0.2,0.8,0.2,1); }
+        .cinematic-reveal.visible { opacity: 1; filter: blur(0); transform: translateY(0); }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+        .btn-primary { transition: opacity 0.3s ease, transform 0.3s ease; }
+        .btn-primary:hover { opacity: 0.82; transform: scale(1.02); }
+        .btn-secondary { transition: border-color 0.3s ease, transform 0.3s ease; }
+        .btn-secondary:hover { border-color: var(--accent) !important; transform: scale(1.02); }
+        .proof-card { transition: transform 0.45s ease, border-color 0.45s ease, box-shadow 0.45s ease; min-width: 0; overflow: hidden; }
+        .proof-card:hover { transform: translateY(-4px); border-color: rgba(139,108,79,0.3) !important; box-shadow: 0 8px 40px rgba(26,17,8,0.07); }
+        .grain-overlay { position: relative; }
+        .grain-overlay::before { content: ''; position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.035; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); background-repeat: repeat; background-size: 200px 200px; pointer-events: none; z-index: 1; }
+        .faq-item { border-top: 1px solid rgba(26,17,8,0.1); }
+        .faq-item:last-child { border-bottom: 1px solid rgba(26,17,8,0.1); }
+        .inline-link { color: var(--accent); text-decoration: underline; text-decoration-color: rgba(139,108,79,0.3); text-underline-offset: 3px; transition: opacity 0.3s ease; }
+        .inline-link:hover { opacity: 0.7; }
+        .inline-link-inv { color: rgba(139,108,79,0.85); text-decoration: underline; text-decoration-color: rgba(139,108,79,0.2); text-underline-offset: 3px; transition: opacity 0.3s ease; }
+        .inline-link-inv:hover { opacity: 0.7; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Engagement Photographer Website Design",
+  "provider": {
+    "@type": "Organization",
+    "name": "Rosetta Systems",
+    "url": "https://www.rosettasystems.co"
+  },
+  "areaServed": "US",
+  "description": "Website design for engagement and couples photographers across the United States. Fast-loading, editorial, SEO-optimised sites built to rank for local engagement searches and convert sessions into wedding bookings.",
+  "offers": {
+    "@type": "Offer",
+    "price": "2000",
+    "priceCurrency": "USD",
+    "description": "Setup from $2,000 with $100/month ongoing support"
+  }
+}
+    </script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="site-nav" class="fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
+            <a href="/" style="text-decoration:none;cursor:pointer;" class="flex items-baseline gap-2">
+                <span class="font-serif italic text-2xl tracking-wide">Rosetta</span>
+                <span class="text-[10px] tracking-[0.3em] uppercase text-neutral-500 font-medium">Systems</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-10 text-xs tracking-widest uppercase font-light">
+                <a href="/the-work" class="nav-link">The Work</a>
+                <a href="/#solution" class="nav-link">Method</a>
+                <a href="/#contact" class="nav-link">Initiate</a>
+                <a href="/blog/" class="nav-link">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="min-h-screen flex flex-col justify-center px-6 relative overflow-hidden pt-20 grain-overlay" style="background:#E8E0D3;">
+        <div class="max-w-5xl mx-auto relative z-10 w-full">
+            <hr style="border:none;border-top:1px solid rgba(26,17,8,0.12);margin:48px 0;">
+            <div class="text-center text-[9px] tracking-[0.55em] uppercase font-light mb-12 cinematic-reveal" style="color:var(--accent);">
+                Rosetta Systems — Engagement &amp; Couples Photography
+            </div>
+            <div class="hero-text-wrapper" style="border-left:1px solid rgba(139,108,79,0.3);padding-left:32px;">
+                <h1 class="text-5xl md:text-7xl lg:text-[5.5rem] font-light font-serif tracking-tight mb-10 leading-[1.08] cinematic-reveal delay-200" style="color:var(--text-primary);">
+                    Engagement photographer website design
+                    <span class="italic" style="color:var(--text-secondary);">that ranks and books.</span>
+                </h1>
+                <p class="text-lg md:text-xl mb-16 cinematic-reveal delay-300 font-light leading-relaxed max-w-2xl" style="color:var(--text-secondary);">
+                    The engagement shoot is usually the first time a couple hires you. It's a small yes that decides a much bigger one — because the photographer who nails the engagement session is the one they book for the wedding. Your site is where that first yes happens or doesn't.
+                </p>
+            </div>
+            <div class="flex flex-col sm:flex-row items-start justify-start gap-5 cinematic-reveal delay-400">
+                <a href="/#contact" class="w-full sm:w-auto px-10 py-4 font-light tracking-[0.32em] text-xs uppercase btn-primary" style="background:var(--bg-deep);color:var(--text-inverse);">
+                    Get Your Free Mockup
+                </a>
+                <a href="/#solution" class="w-full sm:w-auto px-10 py-4 bg-transparent font-light tracking-[0.32em] text-xs uppercase btn-secondary" style="border:1px solid var(--border);color:var(--text-primary);">
+                    See How It Works
+                </a>
+            </div>
+            <hr style="border:none;border-top:1px solid rgba(26,17,8,0.12);margin:48px 0;">
+        </div>
+        <div style="position:absolute;bottom:40px;right:40px;font-family:'Inter',sans-serif;font-weight:300;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(26,17,8,0.3);">EST. MMXXV</div>
+    </section>
+
+    <!-- THE PROBLEM -->
+    <section class="py-[120px] px-6 relative overflow-hidden grain-overlay" style="background:radial-gradient(ellipse at 50% 0%, #251A0E 0%, #1A1108 60%);border-top:1px solid rgba(139,108,79,0.08);">
+        <div class="max-w-5xl mx-auto relative z-10">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-5xl font-light font-serif tracking-tight cinematic-reveal" style="color:var(--text-inverse);">
+                    The problem with most engagement sites.
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="proof-card p-8" style="border:1px solid rgba(139,108,79,0.15);background:rgba(255,255,255,0.02);">
+                    <div class="text-[9px] tracking-[0.4em] uppercase font-light mb-6" style="color:var(--accent);opacity:0.6;">01</div>
+                    <h3 class="text-xl font-light font-serif mb-4 cinematic-reveal" style="color:var(--text-inverse);">Fast searches, invisible sites</h3>
+                    <p class="text-sm font-light leading-relaxed cinematic-reveal" style="color:rgba(232,224,211,0.5);">Couples booking engagement sessions search local and search fast — on a Tuesday night, comparing three photographers. If you don't rank, you're not in the comparison at all.</p>
+                </div>
+                <div class="proof-card p-8" style="border:1px solid rgba(139,108,79,0.15);background:rgba(255,255,255,0.02);">
+                    <div class="text-[9px] tracking-[0.4em] uppercase font-light mb-6" style="color:var(--accent);opacity:0.6;">02</div>
+                    <h3 class="text-xl font-light font-serif mb-4 cinematic-reveal" style="color:var(--text-inverse);">Booking buried, clients gone</h3>
+                    <p class="text-sm font-light leading-relaxed cinematic-reveal" style="color:rgba(232,224,211,0.5);">If booking isn't obvious in one scroll, they move on — and you never knew they were there. Most photographer sites make enquiring feel like a scavenger hunt.</p>
+                </div>
+                <div class="proof-card p-8" style="border:1px solid rgba(139,108,79,0.15);background:rgba(255,255,255,0.02);">
+                    <div class="text-[9px] tracking-[0.4em] uppercase font-light mb-6" style="color:var(--accent);opacity:0.6;">03</div>
+                    <h3 class="text-xl font-light font-serif mb-4 cinematic-reveal" style="color:var(--text-inverse);">Sessions that go nowhere</h3>
+                    <p class="text-sm font-light leading-relaxed cinematic-reveal" style="color:rgba(232,224,211,0.5);">An engagement session that doesn't lead to the wedding booking is revenue lost twice. Most sites aren't structured to move the conversation forward — they just show the photos and stop.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT WE BUILD -->
+    <section class="py-[120px] px-6 relative grain-overlay" style="background:#E8E0D3;border-top:1px solid var(--border);">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-5xl font-light font-serif tracking-tight cinematic-reveal" style="color:var(--text-primary);">What we build.</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="proof-card p-8" style="border:1px solid rgba(26,17,8,0.1);background:rgba(255,255,255,0.3);">
+                    <div class="text-[9px] tracking-[0.4em] uppercase font-light mb-6" style="color:var(--accent);opacity:0.7;">01</div>
+                    <h3 class="text-xl font-light font-serif mb-4 cinematic-reveal" style="color:var(--text-primary);">Structure</h3>
+                    <p class="text-sm font-light leading-relaxed cinematic-reveal" style="color:var(--text-secondary);">A six-page site with dedicated service and location pages built to rank. Every page targets a search — engagement sessions, couples portraits, specific locations and cities.</p>
+                </div>
+                <div class="proof-card p-8" style="border:1px solid rgba(26,17,8,0.1);background:rgba(255,255,255,0.3);">
+                    <div class="text-[9px] tracking-[0.4em] uppercase font-light mb-6" style="color:var(--accent);opacity:0.7;">02</div>
+                    <h3 class="text-xl font-light font-serif mb-4 cinematic-reveal" style="color:var(--text-primary);">Technical SEO</h3>
+                    <p class="text-sm font-light leading-relaxed cinematic-reveal" style="color:var(--text-secondary);">Full technical SEO — schema, sitemap, meta, semantic structure, image optimisation. The infrastructure that gets the site indexed, trusted, and ranked.</p>
+                </div>
+                <div class="proof-card p-8" style="border:1px solid rgba(26,17,8,0.1);background:rgba(255,255,255,0.3);">
+                    <div class="text-[9px] tracking-[0.4em] uppercase font-light mb-6" style="color:var(--accent);opacity:0.7;">03</div>
+                    <h3 class="text-xl font-light font-serif mb-4 cinematic-reveal" style="color:var(--text-primary);">Copy &amp; Booking</h3>
+                    <p class="text-sm font-light leading-relaxed cinematic-reveal" style="color:var(--text-secondary);">Copy that treats the engagement session as the front door to your wedding calendar, not a one-off. A launch article. Booking integration wired in and ready on day one.</p>
+                </div>
+            </div>
+            <div class="mt-16 text-center cinematic-reveal">
+                <p class="text-sm font-light" style="color:var(--text-secondary);">
+                    We apply the same approach to <a href="/services/wedding-photography-websites" class="inline-link">wedding photography websites</a> — same foundations, tuned to each market.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY IT BOOKS -->
+    <section class="py-[120px] px-6 relative grain-overlay" style="background:radial-gradient(ellipse at 50% 0%, #251A0E 0%, #1A1108 60%);border-top:1px solid rgba(139,108,79,0.08);">
+        <div class="max-w-3xl mx-auto text-center">
+            <div class="text-[9px] tracking-[0.55em] uppercase font-light mb-12" style="color:var(--accent);">
+                Why it books
+            </div>
+            <p class="text-2xl md:text-3xl font-light font-serif leading-relaxed mb-10 cinematic-reveal" style="color:var(--text-inverse);">
+                Get found for the engagement search.<br class="hidden md:block"/> Convert the session. Win the wedding.
+            </p>
+            <p class="text-base font-light leading-relaxed mb-10 cinematic-reveal" style="color:rgba(232,224,211,0.6);">
+                We structure the whole site around the funnel: get found for the engagement search, convert the session, then set up the wedding conversation. That's how a couples session turns into your highest-value booking of the year — not by accident, but by design.
+            </p>
+            <p class="text-sm font-light cinematic-reveal" style="color:rgba(232,224,211,0.4);">
+                Location pages built for specific markets —
+                <a href="/locations/wedding-photographer-websites-texas" class="inline-link-inv">Texas and beyond</a>.
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-[120px] px-6 relative grain-overlay" style="background:#E8E0D3;border-top:1px solid var(--border);">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-5xl font-light font-serif tracking-tight cinematic-reveal" style="color:var(--text-primary);">Questions.</h2>
+            </div>
+            <div id="faq-list">
+                <div class="faq-item py-10 cinematic-reveal">
+                    <h3 class="text-xl font-light font-serif mb-4" style="color:var(--text-primary);">Do you only work with engagement photographers?</h3>
+                    <p class="text-sm font-light leading-relaxed" style="color:var(--text-secondary);">Photographers only. Engagement and couples work is a core vertical alongside <a href="/services/wedding-photography-websites" class="inline-link">wedding</a> and elopement.</p>
+                </div>
+                <div class="faq-item py-10 cinematic-reveal">
+                    <h3 class="text-xl font-light font-serif mb-4" style="color:var(--text-primary);">What's included for $2,000?</h3>
+                    <p class="text-sm font-light leading-relaxed" style="color:var(--text-secondary);">Six-page site, three service and three location SEO pages, full technical SEO, up to 35 optimised images, one launch article, booking integration.</p>
+                </div>
+                <div class="faq-item py-10 cinematic-reveal">
+                    <h3 class="text-xl font-light font-serif mb-4" style="color:var(--text-primary);">How does the free mockup work?</h3>
+                    <p class="text-sm font-light leading-relaxed" style="color:var(--text-secondary);">We build a real homepage draft before you pay. You react to it, then decide.</p>
+                </div>
+                <div class="faq-item py-10 cinematic-reveal">
+                    <h3 class="text-xl font-light font-serif mb-4" style="color:var(--text-primary);">Will this help me convert engagement clients into weddings?</h3>
+                    <p class="text-sm font-light leading-relaxed" style="color:var(--text-secondary);">That's how we build it — the site is structured to move a couples session toward a wedding booking, not treat it as a dead end.</p>
+                </div>
+                <div class="faq-item py-10 cinematic-reveal">
+                    <h3 class="text-xl font-light font-serif mb-4" style="color:var(--text-primary);">Will it rank me for "engagement photographer [city]"?</h3>
+                    <p class="text-sm font-light leading-relaxed" style="color:var(--text-secondary);">Location and service pages plus schema are aimed at exactly that. No honest guarantee on position, but this is the work that moves it. See how we handle <a href="/locations/wedding-photographer-websites-texas" class="inline-link">location SEO in Texas</a>.</p>
+                </div>
+                <div class="faq-item py-10 cinematic-reveal">
+                    <h3 class="text-xl font-light font-serif mb-4" style="color:var(--text-primary);">Do I own the site?</h3>
+                    <p class="text-sm font-light leading-relaxed" style="color:var(--text-secondary);">Yes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING / FINAL CTA -->
+    <section id="final-cta" class="py-[120px] px-6 grain-overlay" style="background:radial-gradient(ellipse at 50% 0%, #251A0E 0%, #1A1108 60%);border-top:1px solid rgba(139,108,79,0.08);">
+        <div class="max-w-3xl mx-auto text-center">
+            <div class="text-[9px] tracking-[0.55em] uppercase font-light mb-12" style="color:var(--accent);">
+                Pricing
+            </div>
+            <h2 class="text-4xl md:text-6xl font-light font-serif italic tracking-wide mb-8" style="color:var(--text-inverse);">
+                $2,000. Then $100 a month.
+            </h2>
+            <p class="text-base font-light leading-relaxed mb-12 cinematic-reveal" style="color:rgba(232,224,211,0.6);">
+                You see a free mockup before you commit a dollar.
+            </p>
+            <a href="/#contact" class="inline-block px-12 py-5 font-light tracking-[0.32em] text-xs uppercase btn-primary" style="background:var(--accent);color:var(--text-inverse);">
+                Get Your Free Mockup
+            </a>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-8 mt-12 cinematic-reveal">
+                <a href="/the-work" class="text-xs tracking-[0.35em] uppercase font-light transition-opacity duration-300 hover:opacity-60" style="color:rgba(232,224,211,0.45);">See the work →</a>
+                <a href="/#contact" class="text-xs tracking-[0.35em] uppercase font-light transition-opacity duration-300 hover:opacity-60" style="color:rgba(232,224,211,0.45);">Initiate →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="px-8" style="background:radial-gradient(ellipse at 50% 0%, #251A0E 0%, #1A1108 60%);border-top:1px solid rgba(139,108,79,0.1);">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8" style="padding-top:60px;padding-bottom:60px;">
+            <div class="flex items-baseline gap-2">
+                <span class="font-serif italic text-xl tracking-wide text-white">Rosetta</span>
+                <span class="text-[9px] tracking-[0.3em] uppercase text-neutral-500 font-medium">Systems</span>
+            </div>
+            <div>
+                <a href="mailto:contact@rosettasystems.co" class="text-xs tracking-widest uppercase font-light transition-opacity duration-300 hover:opacity-60" style="color:var(--text-secondary);">contact@rosettasystems.co</a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto text-center" style="margin-bottom:20px;">
+            <p style="font-family:'Inter',sans-serif;font-weight:300;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(242,237,228,0.3);">Websites for photographers — Texas &amp; beyond.</p>
+        </div>
+        <div class="max-w-7xl mx-auto pb-8 text-center" style="border-top:1px solid rgba(139,108,79,0.08);">
+            <p class="pt-6 text-[9px] tracking-[0.35em] uppercase font-light" style="color:var(--text-secondary);">
+                © MMXXV Rosetta Systems. All rights reserved.
+                <a href="/privacy" style="margin-left:1.6em;font-family:'Inter',sans-serif;font-weight:300;font-size:inherit;letter-spacing:inherit;text-transform:inherit;color:var(--text-secondary);text-decoration:none;transition:opacity 0.3s ease;" onmouseover="this.style.opacity='0.5'" onmouseout="this.style.opacity='1'">Privacy Policy</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        (function(){
+            var nav = document.getElementById('site-nav');
+            window.addEventListener('scroll', function(){
+                nav.classList.toggle('scrolled', window.scrollY > 80);
+            }, { passive: true });
+
+            // Trigger hero reveals immediately
+            document.querySelectorAll('section:first-of-type .cinematic-reveal').forEach(function(el){
+                setTimeout(function(){ el.classList.add('visible'); }, 300);
+            });
+        })();
+    </script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.to(".hero-text-wrapper", {
+            yPercent: -20, ease: "none",
+            scrollTrigger: { trigger: ".hero-text-wrapper", start: "top top", end: "bottom top", scrub: true }
+        });
+
+        (function() {
+            var heroSection = document.querySelector('section');
+            var ctaHeadline = document.querySelector('#final-cta h2');
+            var groups = new Map();
+            document.querySelectorAll('.cinematic-reveal').forEach(function(el) {
+                if (heroSection && heroSection.contains(el)) return;
+                if (el === ctaHeadline) return;
+                var key = el.parentElement;
+                if (!groups.has(key)) groups.set(key, []);
+                groups.get(key).push(el);
+            });
+            groups.forEach(function(children, parent) {
+                gsap.fromTo(children,
+                    { opacity: 0, y: 40, filter: 'blur(12px)' },
+                    { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.2, ease: "expo.out", stagger: children.length > 1 ? 0.12 : 0,
+                      scrollTrigger: { trigger: parent, start: "top 85%", toggleActions: "play none none none" } }
+                );
+            });
+        })();
+
+        (function() {
+            var ctaHeadline = document.querySelector('#final-cta h2');
+            if (!ctaHeadline) return;
+            gsap.fromTo(ctaHeadline,
+                { opacity: 0, y: 40, filter: 'blur(12px)' },
+                { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.2, ease: "expo.out",
+                  scrollTrigger: { trigger: ctaHeadline, start: "top 85%", toggleActions: "play none none none" },
+                  onComplete: function() {
+                      gsap.to(ctaHeadline, { opacity: 0.75, duration: 2.8, ease: "sine.inOut", repeat: -1, yoyo: true });
+                  }
+                }
+            );
+        })();
+    </script>
+
+</body>
+</html>
