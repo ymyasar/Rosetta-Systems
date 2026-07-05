@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8MKQVLLV7L"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8MKQVLLV7L');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: Kevin Nguyen — Corporate Headshots, Austin TX | Rosetta Systems</title>
+    <meta name="description" content="How Rosetta Systems built Kevin Nguyen Photography a custom headshots website from scratch — migrated off Bluehost, full SEO infrastructure, Acuity booking. Launched June 2026.">
+    <link rel="canonical" href="https://www.rosettasystems.co/case-study-kevin-nguyen" />
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Rosetta Systems">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Case Study: Kevin Nguyen — Corporate Headshots, Austin TX | Rosetta Systems">
+    <meta property="og:description" content="How Rosetta Systems built Kevin Nguyen Photography a custom headshots website from scratch — migrated off Bluehost, full SEO infrastructure, Acuity booking. Launched June 2026.">
+    <meta property="og:url" content="https://www.rosettasystems.co/case-study-kevin-nguyen">
+    <meta property="og:site_name" content="Rosetta Systems">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Case Study: Kevin Nguyen — Corporate Headshots, Austin TX | Rosetta Systems">
+    <meta name="twitter:description" content="How Rosetta Systems built Kevin Nguyen Photography a custom headshots website from scratch — migrated off Bluehost, full SEO infrastructure, Acuity booking. Launched June 2026.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@0.383.0/dist/umd/lucide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Inter"', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                    },
+                    colors: {
+                        matte: '#1A1108',
+                        surface: '#E0D8CA',
+                        border: 'rgba(26,17,8,0.1)',
+                        warm: {
+                            DEFAULT: '#8B6C4F',
+                            glow: 'rgba(139,108,79,0.15)',
+                            strong: 'rgba(139,108,79,0.3)'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --bg-primary: #E8E0D3;
+            --bg-deep: #1A1108;
+            --bg-surface: #E0D8CA;
+            --accent: #8B6C4F;
+            --accent-light: rgba(139,108,79,0.15);
+            --text-primary: #1A1108;
+            --text-secondary: #6B5744;
+            --text-inverse: #E8E0D3;
+            --border: rgba(26,17,8,0.1);
+        }
+
+        html, body { overflow-x: hidden; max-width: 100%; }
+
+        body { background-color: #E8E0D3; color: #1A1108; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+        ::selection { background-color: rgba(139,108,79,0.2); color: #8B6C4F; }
+
+        /* ── Preserve Rosetta logotype in Playfair Display ── */
+        #site-nav .font-serif { font-family: 'Playfair Display', serif; color: #1A1108; }
+        footer .font-serif { font-family: 'Playfair Display', serif; }
+        #site-nav .text-neutral-500 { color: #6B5744 !important; }
+
+        /* Nav is always visible on sub-pages */
+        #site-nav {
+            background: rgba(232,224,211,0.95);
+            border-bottom: 1px solid rgba(139,108,79,0.2);
+        }
+        .nav-link { color: var(--text-primary); transition: color 0.3s ease, opacity 0.3s ease; }
+        .nav-link:hover { opacity: 0.6; }
+
+        /* ── Animations ── */
+        .cinematic-reveal {
+            opacity: 0;
+            filter: blur(12px);
+            transform: translateY(40px);
+            transition: opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+                        filter 1.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+                        transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .cinematic-reveal.visible { opacity: 1; filter: blur(0); transform: translateY(0); }
+
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+
+        /* ── Buttons ── */
+        .btn-primary { transition: opacity 0.3s ease, transform 0.3s ease; }
+        .btn-primary:hover { opacity: 0.82; transform: scale(1.02); }
+
+        /* ── Grain texture overlay ── */
+        .grain-overlay { position: relative; }
+        .grain-overlay::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.035;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* ── Prose link ── */
+        .prose-link {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(139,108,79,0.3);
+            transition: border-color 0.3s ease, opacity 0.3s ease;
+        }
+        .prose-link:hover {
+            opacity: 0.7;
+            border-color: var(--accent);
+        }
+
+        /* ── Divider rule ── */
+        .section-rule {
+            border: none;
+            border-top: 1px solid rgba(26,17,8,0.08);
+            margin: 0;
+        }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Case study: Kevin Nguyen — corporate headshots, Austin, TX",
+  "description": "How Rosetta Systems built Kevin Nguyen Photography a custom headshots website from scratch — migrated off Bluehost, full SEO infrastructure, Acuity booking. Launched June 2026.",
+  "author": {
+    "@type": "Organization",
+    "name": "Rosetta Systems"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rosetta Systems",
+    "url": "https://www.rosettasystems.co"
+  },
+  "datePublished": "2026-07-05",
+  "url": "https://www.rosettasystems.co/case-study-kevin-nguyen"
+}
+    </script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="site-nav" class="fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
+            <a href="/" style="text-decoration:none;cursor:pointer;" class="flex items-baseline gap-2">
+                <span class="font-serif italic text-2xl tracking-wide">Rosetta</span>
+                <span class="text-[10px] tracking-[0.3em] uppercase text-neutral-500 font-medium">Systems</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-10 text-xs tracking-widest uppercase font-light">
+                <a href="/the-work" class="nav-link">The Work</a>
+                <a href="/#solution" class="nav-link">Method</a>
+                <a href="/#contact" class="nav-link">Initiate</a>
+                <a href="/blog/" class="nav-link">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ── HERO ──────────────────────────────────── -->
+    <section class="min-h-[60vh] flex flex-col justify-center px-6 relative overflow-hidden pt-20 grain-overlay" style="background:#E8E0D3;">
+        <div class="max-w-5xl mx-auto relative z-10 w-full">
+
+            <hr style="border:none;border-top:1px solid rgba(26,17,8,0.12);margin:48px 0;">
+
+            <div class="text-center text-[9px] tracking-[0.55em] uppercase font-light mb-12 cinematic-reveal" style="color:var(--accent);">
+                Rosetta Systems — Case Study
+            </div>
+
+            <div class="hero-text-wrapper" style="border-left:1px solid rgba(139,108,79,0.3);padding-left:32px;">
+                <h1 class="text-4xl md:text-6xl lg:text-[4.5rem] font-light font-serif tracking-tight mb-10 leading-[1.1] cinematic-reveal delay-200" style="color:var(--text-primary);">
+                    Case study: Kevin Nguyen —
+                    <span class="italic" style="color:var(--text-secondary);">corporate headshots, Austin, TX</span>
+                </h1>
+                <p class="text-lg md:text-xl mb-8 cinematic-reveal delay-300 font-light leading-relaxed max-w-2xl" style="color:var(--text-secondary);">
+                    Kevin Nguyen is a corporate and headshots photographer based in Austin, TX.
+                    His site, <a href="https://kevinheadshots.com" target="_blank" class="prose-link">kevinheadshots.com</a>,
+                    launched June 2026 on a full Rosetta build — no stock look, no compromises.
+                </p>
+            </div>
+
+            <hr style="border:none;border-top:1px solid rgba(26,17,8,0.12);margin:48px 0;">
+        </div>
+
+        <div style="position:absolute;bottom:40px;right:40px;font-family:'Inter',sans-serif;font-weight:300;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(26,17,8,0.3);">EST. MMXXV</div>
+    </section>
+
+    <!-- ── WHAT WE BUILT ─────────────────────────── -->
+    <section class="py-[120px] px-6 grain-overlay" style="background:#E0D8CA;border-top:1px solid var(--border);">
+        <div class="max-w-3xl mx-auto relative z-[2]">
+
+            <div class="cinematic-reveal mb-16">
+                <div class="text-[9px] tracking-[0.55em] uppercase font-light mb-8" style="color:var(--accent);">The Build</div>
+                <h2 class="text-3xl md:text-4xl font-serif italic font-light tracking-tight mb-12" style="color:var(--text-primary);">What we built</h2>
+                <hr class="section-rule mb-12">
+            </div>
+
+            <div class="space-y-8 cinematic-reveal delay-200">
+                <p class="text-lg md:text-xl font-light leading-relaxed" style="color:var(--text-secondary);">
+                    Kevin came to us carrying a Bluehost holding page and no organic presence worth speaking of.
+                    The brief was clear: build something that converts, rank it locally, and get him out of the
+                    hosting arrangement that had been slowing him down. We started from scratch.
+                </p>
+                <p class="text-lg md:text-xl font-light leading-relaxed" style="color:var(--text-secondary);">
+                    The site is a fully custom commission — not a stock look pulled from a shelf. Every decision,
+                    from the type scale to the session flow, was made for Kevin's market: Austin professionals
+                    who judge a photographer's credibility before they ever send an enquiry. We migrated the
+                    domain off Bluehost and onto modern infrastructure so the site loads fast on the first
+                    impression, not after it.
+                </p>
+                <p class="text-lg md:text-xl font-light leading-relaxed" style="color:var(--text-secondary);">
+                    The SEO foundation was built in from day one. Structured JSON-LD schema tells search engines
+                    exactly what Kevin offers and where — local service pages cover Austin's corporate districts
+                    so the site can compete for the searches that matter. Google Search Console was configured
+                    before launch, which means ranking data is accumulating from the first crawl rather than
+                    being lost in a black hole.
+                </p>
+                <p class="text-lg md:text-xl font-light leading-relaxed" style="color:var(--text-secondary);">
+                    Acuity Scheduling is integrated natively. A prospect who lands on the site can book a
+                    headshot session in under two minutes — no email back-and-forth, no friction between
+                    intent and confirmed booking. The site went live in June 2026.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── EARLY NUMBERS ─────────────────────────── -->
+    <section class="py-[120px] px-6 grain-overlay" style="background:#E8E0D3;border-top:1px solid var(--border);">
+        <div class="max-w-3xl mx-auto relative z-[2]">
+
+            <div class="cinematic-reveal mb-12">
+                <div class="text-[9px] tracking-[0.55em] uppercase font-light mb-8" style="color:var(--accent);">Performance</div>
+                <h2 class="text-3xl md:text-4xl font-serif italic font-light tracking-tight mb-12" style="color:var(--text-primary);">Early numbers</h2>
+                <hr class="section-rule mb-12">
+            </div>
+
+            <p class="text-lg md:text-xl font-light leading-relaxed cinematic-reveal delay-200" style="color:var(--text-secondary);">
+                Search performance data is accumulating — updated monthly.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL — un-comment when Kevin's quote lands
+    <section class="py-[120px] px-6" style="background:radial-gradient(ellipse at 50% 0%, #251A0E 0%, #1A1108 60%);border-top:1px solid rgba(139,108,79,0.08);">
+        <div class="max-w-3xl mx-auto text-center">
+            <blockquote>
+                <p class="text-2xl md:text-3xl font-serif italic font-light leading-relaxed mb-10" style="color:var(--text-inverse);">
+                    "QUOTE VERBATIM HERE"
+                </p>
+                <cite class="text-[9px] tracking-[0.4em] uppercase font-light not-italic" style="color:var(--accent);">
+                    — Kevin Nguyen, Kevin Nguyen Photography, Austin
+                </cite>
+            </blockquote>
+        </div>
+    </section>
+    -->
+
+    <!-- ── CTA ──────────────────────────────────── -->
+    <section class="py-[120px] px-6 text-center grain-overlay" style="background:radial-gradient(ellipse at 50% 0%, #251A0E 0%, #1A1108 60%);border-top:1px solid rgba(139,108,79,0.12);">
+        <div class="max-w-2xl mx-auto cinematic-reveal">
+            <div class="text-[9px] tracking-[0.55em] uppercase font-light mb-12" style="color:var(--accent);">Initiate</div>
+            <h2 class="text-3xl md:text-4xl font-serif italic font-light tracking-tight mb-14" style="color:var(--text-inverse);">
+                Your city. Your look.<br class="hidden md:block"/> Your site.
+            </h2>
+            <a href="/#contact"
+               class="inline-block px-12 py-5 font-light tracking-[0.4em] text-xs uppercase btn-primary"
+               style="background:var(--accent);color:var(--text-inverse);">
+                Book your discovery call
+            </a>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ─────────────────────────────────── -->
+    <div style="height:1px;background:rgba(242,237,228,0.15);"></div>
+    <footer class="px-8" style="background:radial-gradient(ellipse at 50% 0%, #251A0E 0%, #1A1108 60%);border-top:1px solid rgba(139,108,79,0.1);">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8" style="padding-top:60px;padding-bottom:60px;">
+            <div class="flex items-baseline gap-2">
+                <span class="font-serif italic text-xl tracking-wide text-white">Rosetta</span>
+                <span class="text-[9px] tracking-[0.3em] uppercase text-neutral-500 font-medium">Systems</span>
+            </div>
+            <div>
+                <a href="mailto:contact@rosettasystems.co" class="text-xs tracking-widest uppercase font-light transition-opacity duration-300 hover:opacity-60" style="color:var(--text-secondary);">contact@rosettasystems.co</a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto text-center" style="margin-bottom:20px;">
+            <p style="font-family:'Inter',sans-serif;font-weight:300;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(242,237,228,0.3);">Websites for photographers — Texas &amp; beyond.</p>
+        </div>
+        <div class="max-w-7xl mx-auto pb-8 text-center" style="border-top:1px solid rgba(139,108,79,0.08);">
+            <p class="pt-6 text-[9px] tracking-[0.35em] uppercase font-light" style="color:var(--text-secondary);">
+                © MMXXV Rosetta Systems. All rights reserved.
+                <a href="/privacy" style="margin-left:1.6em;font-family:'Inter',sans-serif;font-weight:300;font-size:inherit;letter-spacing:inherit;text-transform:inherit;color:var(--text-secondary);text-decoration:none;transition:opacity 0.3s ease;" onmouseover="this.style.opacity='0.5'" onmouseout="this.style.opacity='1'">Privacy Policy</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        (function(){
+            var nav = document.getElementById('site-nav');
+            window.addEventListener('scroll', function(){
+                nav.classList.toggle('scrolled', window.scrollY > 80);
+            }, { passive: true });
+
+            document.querySelectorAll('section:first-of-type .cinematic-reveal').forEach(function(el){
+                setTimeout(function(){ el.classList.add('visible'); }, 300);
+            });
+        })();
+    </script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.to(".hero-text-wrapper", {
+            yPercent: -20, ease: "none",
+            scrollTrigger: { trigger: ".hero-text-wrapper", start: "top top", end: "bottom top", scrub: true }
+        });
+
+        document.querySelectorAll('.cinematic-reveal').forEach(function(el){
+            ScrollTrigger.create({
+                trigger: el,
+                start: 'top 88%',
+                onEnter: function(){ el.classList.add('visible'); }
+            });
+        });
+    </script>
+
+</body>
+</html>
