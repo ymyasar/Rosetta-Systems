@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8MKQVLLV7L"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8MKQVLLV7L');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO for Wedding Photographers | Rosetta Systems</title>
+    <meta name="description" content="SEO built for wedding photographers — the ongoing work that gets your site ranking for the local searches couples actually make, month after month. Part of every Rosetta retainer.">
+    <link rel="canonical" href="https://www.rosettasystems.co/services/seo-for-wedding-photographers" />
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Rosetta Systems">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SEO for Wedding Photographers | Rosetta Systems">
+    <meta property="og:description" content="SEO built for wedding photographers — the ongoing work that gets your site ranking for the local searches couples actually make, month after month. Part of every Rosetta retainer.">
+    <meta property="og:url" content="https://www.rosettasystems.co/services/seo-for-wedding-photographers">
+    <meta property="og:site_name" content="Rosetta Systems">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Inter"', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                    },
+                    colors: {
+                        matte: '#1A1108',
+                        surface: '#E0D8CA',
+                        border: 'rgba(26,17,8,0.1)',
+                        warm: {
+                            DEFAULT: '#8B6C4F',
+                            glow: 'rgba(139,108,79,0.15)',
+                            strong: 'rgba(139,108,79,0.3)'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --bg-primary: #E8E0D3;
+            --bg-deep: #1A1108;
+            --bg-surface: #E0D8CA;
+            --accent: #8B6C4F;
+            --accent-light: rgba(139,108,79,0.15);
+            --text-primary: #1A1108;
+            --text-secondary: #6B5744;
+            --text-inverse: #E8E0D3;
+            --border: rgba(26,17,8,0.1);
+        }
+        html, body { overflow-x: hidden; max-width: 100%; }
+        body { background-color: #E8E0D3; color: #1A1108; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        ::selection { background-color: rgba(139,108,79,0.2); color: #8B6C4F; }
+        #site-nav .font-serif { font-family: 'Playfair Display', serif; color: #1A1108; }
+        footer .font-serif { font-family: 'Playfair Display', serif; }
+        #site-nav .text-neutral-500 { color: #6B5744 !important; }
+        #site-nav {
+            background: rgba(232,224,211,0.95);
+            border-bottom: 1px solid rgba(139,108,79,0.2);
+        }
+        .nav-link { color: var(--text-primary); transition: color 0.3s ease, opacity 0.3s ease; }
+        .nav-link:hover { opacity: 0.6; }
+        .cinematic-reveal { opacity: 0; filter: blur(12px); transform: translateY(40px); transition: opacity 1.2s cubic-bezier(0.2,0.8,0.2,1), filter 1.2s cubic-bezier(0.2,0.8,0.2,1), transform 1.2s cubic-bezier(0.2,0.8,0.2,1); }
+        .cinematic-reveal.visible { opacity: 1; filter: blur(0); transform: translateY(0); }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+        .btn-primary { transition: opacity 0.3s ease, transform 0.3s ease; }
+        .btn-primary:hover { opacity: 0.82; transform: scale(1.02); }
+        .btn-secondary { transition: border-color 0.3s ease, transform 0.3s ease; }
+        .btn-secondary:hover { border-color: var(--accent) !important; transform: scale(1.02); }
+        .proof-card { transition: transform 0.45s ease, border-color 0.45s ease, box-shadow 0.45s ease; min-width: 0; overflow: hidden; }
+        .proof-card:hover { transform: translateY(-4px); border-color: rgba(139,108,79,0.3) !important; box-shadow: 0 8px 40px rgba(26,17,8,0.07); }
+        .grain-overlay { position: relative; }
+        .grain-overlay::before { content: ''; position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.035; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); background-repeat: repeat; background-size: 200px 200px; pointer-events: none; z-index: 1; }
+        .faq-item { border-top: 1px solid rgba(26,17,8,0.1); }
+        .faq-item:last-child { border-bottom: 1px solid rgba(26,17,8,0.1); }
+        .inline-link { color: var(--accent); text-decoration: underline; text-decoration-color: rgba(139,108,79,0.3); text-underline-offset: 3px; transition: opacity 0.3s ease; }
+        .inline-link:hover { opacity: 0.7; }
+        .inline-link-inv { color: rgba(139,108,79,0.85); text-decoration: underline; text-decoration-color: rgba(139,108,79,0.2); text-underline-offset: 3px; transition: opacity 0.3s ease; }
+        .inline-link-inv:hover { opacity: 0.7; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "SEO for Wedding Photographers",
+  "provider": {
+    "@type": "Organization",
+    "name": "Rosetta Systems",
+    "url": "https://www.rosettasystems.co"
+  },
+  "areaServed": "US",
+  "description": "Ongoing SEO for wedding photographers across the United States. Local search optimisation, monthly content, and technical monitoring built into every Rosetta retainer.",
+  "offers": {
+    "@type": "Offer",
+    "price": "100",
+    "priceCurrency": "USD",
+    "description": "$100/month retainer following $2,000 setup"
+  }
+}
+    </script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="site-nav" class="fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
+            <a href="/" style="text-decoration:none;cursor:pointer;" class="flex items-baseline gap-2">
+                <span class="font-serif italic text-2xl tracking-wide">Rosetta</span>
+                <span class="text-[10px] tracking-[0.3em] uppercase text-neutral-500 font-medium">Systems</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-10 text-xs tracking-widest uppercase font-light">
+                <a href="/the-work" class="nav-link">The Work</a>
+                <a href="/#solution" class="nav-link">Method</a>
+                <a href="/#contact" class="nav-link">Initiate</a>
+                <a href="/blog/" class="nav-link">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="min-h-screen flex flex-col justify-center px-6 relative overflow-hidden pt-20 grain-overlay" style="background:#E8E0D3;">
+        <div class="max-w-5xl mx-auto relative z-10 w-full">
+            <hr style="border:none;border-top:1px solid rgba(26,17,8,0.12);margin:48px 0;">
+            <div class="text-center text-[9px] tracking-[0.55em] uppercase font-light mb-12 cinematic-reveal" style="color:var(--accent);">
+                Rosetta Systems — Wedding Photography SEO
+            </div>
+            <div class="hero-text-wrapper" style="border-left:1px solid rgba(139,108,79,0.3);padding-left:32px;">
+                <h1 class="text-5xl md:text-7xl lg:text-[5.5rem] font-light font-serif tracking-tight mb-10 leading-[1.08] cinematic-reveal delay-200" style="color:var(--text-primary);">
+                    SEO for wedding photographers
+                    <span class="italic" style="color:var(--text-secondary);">that gets you found and booked.</span>
+                </h1>
+                <p class="text-lg md:text-xl mb-16 cinematic-reveal delay-300 font-light leading-relaxed max-w-2xl" style="color:var(--text-secondary);">
+                    A wedding photography site can be gorgeous and completely invisible. Beautiful galleries don't rank. Ranking is not a switch you flip once at launch — it's ongoing work, and it's where most photographers' sites quietly die.
+                </p>
+            </div>
+            <div class="flex flex-col sm:flex-row items-start justify-start gap-5 cinematic-reveal delay-400">
+                <a href="/#contact" class="w-full sm:w-auto px-10 py-4 font-light tracking-[0.32em] text-xs uppercase btn-primary" style="background:var(--bg-deep);color:var(--text-inverse);">
+                    Get Your Free Mockup
+                </a>
+                <a href="/#solution" class="w-full sm:w-auto px-10 py-4 bg-transparent font-light tracking-[0.32em] text-xs uppercase btn-secondary" style="border:1px solid var(--border);color:var(--text-primary);">
+                    See How It Works
+                </a>
+            </div>
+            <hr style="border:none;border-top:1px solid rgba(26,17,8,0.12);margin:48px 0;">
+        </div>
+        <div style="position:absolute;bottom:40px;right:40px;font-family:'Inter',sans-serif;font-weight:300;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(26,17,8,0.3);">EST. MMXXV</div>
+    </section>
+
+    <!-- THE PROBLEM -->
+    <section class="py-[120px] px-6 relative overflow-hidden grain-overlay" style="background:radial-gradient(ellipse at 50% 0%, #251A0E 0%, #1A1108 60%);border-top:1px solid rgba(139,108,79,0.08);">
+        <div class="max-w-5xl mx-auto relative z-10">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-5xl font-light font-serif tracking-tight cinematic-reveal" style="color:var(--text-inverse);">
+                    Why most photographer sites stall.
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="proof-card p-8" style="border:1px solid rgba(139,108,79,0.15);background:rgba(255,255,255,0.02);">
+                    <div class="text-[9px] tracking-[0.4em] uppercase font-light mb-6" style="color:var(--accent);opacity:0.6;">01</div>
+                    <h3 class="text-xl font-light font-serif mb-4 cinematic-reveal" style="color:var(--text-inverse);">Launch and wait</h3>
+                    <p class="text-sm font-light leading-relaxed cinematic-reveal" style="color:rgba(232,224,211,0.5);">A site went up — maybe through a template shop, maybe through a designer. Then nothing. No blog, no location pages, no schema. Google was never told who you are or where you work.</p>
+                </div>
+                <div class="proof-card p-8" style="border:1px solid rgba(139,108,79,0.15);background:rgba(255,255,255,0.02);">
+                    <div class="text-[9px] tracking-[0.4em] uppercase font-light mb-6" style="color:var(--accent);opacity:0.6;">02</div>
+                    <h3 class="text-xl font-light font-serif mb-4 cinematic-reveal" style="color:var(--text-inverse);">No local signal</h3>
+                    <p class="text-sm font-light leading-relaxed cinematic-reveal" style="color:rgba(232,224,211,0.5);">Couples searching "wedding photographer [city]" this weekend won't find you if your site has no location pages, no schema, and no content anchored to where you actually work.</p>
+                </div>
+                <div class="proof-card p-8" style="border:1px solid rgba(139,108,79,0.15);background:rgba(255,255,255,0.02);">
+                    <div class="text-[9px] tracking-[0.4em] uppercase font-light mb-6" style="color:var(--accent);opacity:0.6;">03</div>
+                    <h3 class="text-xl font-light font-serif mb-4 cinematic-reveal" style="color:var(--text-inverse);">One-time setup, permanent stall</h3>
+                    <p class="text-sm font-light leading-relaxed cinematic-reveal" style="color:rgba(232,224,211,0.5);">A clean technical foundation matters — but it decays without fresh content and monitoring. Sites that stop publishing stop climbing. Then they quietly slide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT SEO ACTUALLY MEANS -->
+    <section class="py-[120px] px-6 relative grain-overlay" style="background:#E8E0D3;border-top:1px solid var(--border);">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-5xl font-light font-serif tracking-tight cinematic-reveal" style="color:var(--text-primary);">What SEO actually means for a photographer.</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="proof-card p-8" style="border:1px solid rgba(26,17,8,0.1);background:rgba(255,255,255,0.3);">
+                    <div class="text-[9px] tracking-[0.4em] uppercase font-light mb-6" style="color:var(--accent);opacity:0.7;">01</div>
+                    <h3 class="text-xl font-light font-serif mb-4 cinematic-reveal" style="color:var(--text-primary);">Local intent</h3>
+                    <p class="text-sm font-light leading-relaxed cinematic-reveal" style="color:var(--text-secondary);">Couples search by city, by venue, by style. "Wedding photographer Austin." "[Venue] wedding photographer." Your job is to be the answer. That takes location and service pages built for real phrases.</p>
+                </div>
+                <div class="proof-card p-8" style="border:1px solid rgba(26,17,8,0.1);background:rgba(255,255,255,0.3);">
+                    <div class="text-[9px] tracking-[0.4em] uppercase font-light mb-6" style="color:var(--accent);opacity:0.7;">02</div>
+                    <h3 class="text-xl font-light font-serif mb-4 cinematic-reveal" style="color:var(--text-primary);">Clean technical structure</h3>
+                    <p class="text-sm font-light leading-relaxed cinematic-reveal" style="color:var(--text-secondary);">Schema, sitemap, meta, semantic HTML, image optimisation. The infrastructure that tells Google exactly what your site is, who it's for, and where you work — before a single piece of content lands.</p>
+                </div>
+                <div class="proof-card p-8" style="border:1px solid rgba(26,17,8,0.1);background:rgba(255,255,255,0.3);">
+                    <div class="text-[9px] tracking-[0.4em] uppercase font-light mb-6" style="color:var(--accent);opacity:0.7;">03</div>
+                    <h3 class="text-xl font-light font-serif mb-4 cinematic-reveal" style="color:var(--text-primary);">Content that keeps arriving</h3>
+                    <p class="text-sm font-light leading-relaxed cinematic-reveal" style="color:var(--text-secondary);">A one-time setup is a starting point, not a strategy. Ranking requires fresh content and ongoing attention — not a redesign every year, but one good article a month and consistent monitoring.</p>
+                </div>
+            </div>
+            <div class="mt-16 text-center cinematic-reveal">
+                <p class="text-sm font-light" style="color:var(--text-secondary);">
+                    Every <a href="/services/wedding-photography-websites" class="inline-link">wedding photography website</a> we build ships with this foundation already in place.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW THE RETAINER WORKS -->
+    <section class="py-[120px] px-6 relative grain-overlay" style="background:radial-gradient(ellipse at 50% 0%, #251A0E 0%, #1A1108 60%);border-top:1px solid rgba(139,108,79,0.08);">
+        <div class="max-w-3xl mx-auto text-center">
+            <div class="text-[9px] tracking-[0.55em] uppercase font-light mb-12" style="color:var(--accent);">
+                How the retainer works
+            </div>
+            <p class="text-2xl md:text-3xl font-light font-serif leading-relaxed mb-10 cinematic-reveal" style="color:var(--text-inverse);">
+                The setup builds the foundation.<br class="hidden md:block"/> The retainer keeps it compounding.
+            </p>
+            <p class="text-base font-light leading-relaxed mb-10 cinematic-reveal" style="color:rgba(232,224,211,0.6);">
+                The $2,000 setup fee builds the pages, schema, and technical base. The $100 a month keeps it working — one article, light SEO monitoring, and a monthly performance check so the site keeps climbing instead of stalling the week after launch.
+            </p>
+            <p class="text-sm font-light cinematic-reveal" style="color:rgba(232,224,211,0.4);">
+                Location pages built for specific markets —
+                <a href="/locations/wedding-photographer-websites-texas" class="inline-link-inv">Texas and beyond</a>.
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-[120px] px-6 relative grain-overlay" style="background:#E8E0D3;border-top:1px solid var(--border);">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-5xl font-light font-serif tracking-tight cinematic-reveal" style="color:var(--text-primary);">Questions.</h2>
+            </div>
+            <div id="faq-list">
+                <div class="faq-item py-10 cinematic-reveal">
+                    <h3 class="text-xl font-light font-serif mb-4" style="color:var(--text-primary);">Is SEO included in the setup or the retainer?</h3>
+                    <p class="text-sm font-light leading-relaxed" style="color:var(--text-secondary);">Both. The technical foundation ships with every build. The ongoing work — content, monitoring, checks — is what the $100/month covers.</p>
+                </div>
+                <div class="faq-item py-10 cinematic-reveal">
+                    <h3 class="text-xl font-light font-serif mb-4" style="color:var(--text-primary);">How long until I rank?</h3>
+                    <p class="text-sm font-light leading-relaxed" style="color:var(--text-secondary);">SEO compounds over months, not days. Early movement can show in weeks; meaningful local ranking is a longer game. Anyone promising instant results is lying.</p>
+                </div>
+                <div class="faq-item py-10 cinematic-reveal">
+                    <h3 class="text-xl font-light font-serif mb-4" style="color:var(--text-primary);">What do you actually do each month?</h3>
+                    <p class="text-sm font-light leading-relaxed" style="color:var(--text-secondary);">One article, light SEO monitoring, and a monthly performance check — plus the small ongoing tuning that keeps the site healthy.</p>
+                </div>
+                <div class="faq-item py-10 cinematic-reveal">
+                    <h3 class="text-xl font-light font-serif mb-4" style="color:var(--text-primary);">Do you guarantee rankings?</h3>
+                    <p class="text-sm font-light leading-relaxed" style="color:var(--text-secondary);">No — and be wary of anyone who does. We guarantee the work that moves rankings, done consistently.</p>
+                </div>
+                <div class="faq-item py-10 cinematic-reveal">
+                    <h3 class="text-xl font-light font-serif mb-4" style="color:var(--text-primary);">Do I need this if I already have a site?</h3>
+                    <p class="text-sm font-light leading-relaxed" style="color:var(--text-secondary);">If your current site doesn't rank, a redesign plus this ongoing work is usually the fix. We'll show you a free mockup before you decide.</p>
+                </div>
+                <div class="faq-item py-10 cinematic-reveal">
+                    <h3 class="text-xl font-light font-serif mb-4" style="color:var(--text-primary);">How does the free mockup work?</h3>
+                    <p class="text-sm font-light leading-relaxed" style="color:var(--text-secondary);">We build a real homepage draft before you pay, so you see the standard before you commit a dollar. See <a href="/the-work" class="inline-link">the work</a> for what that looks like in practice.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING / FINAL CTA -->
+    <section id="final-cta" class="py-[120px] px-6 grain-overlay" style="background:radial-gradient(ellipse at 50% 0%, #251A0E 0%, #1A1108 60%);border-top:1px solid rgba(139,108,79,0.08);">
+        <div class="max-w-3xl mx-auto text-center">
+            <div class="text-[9px] tracking-[0.55em] uppercase font-light mb-12" style="color:var(--accent);">
+                Pricing
+            </div>
+            <h2 class="text-4xl md:text-6xl font-light font-serif italic tracking-wide mb-8" style="color:var(--text-inverse);">
+                $2,000. Then $100 a month.
+            </h2>
+            <p class="text-base font-light leading-relaxed mb-12 cinematic-reveal" style="color:rgba(232,224,211,0.6);">
+                You see a free mockup before you commit a dollar.
+            </p>
+            <a href="/#contact" class="inline-block px-12 py-5 font-light tracking-[0.32em] text-xs uppercase btn-primary" style="background:var(--accent);color:var(--text-inverse);">
+                Get Your Free Mockup
+            </a>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-8 mt-12 cinematic-reveal">
+                <a href="/the-work" class="text-xs tracking-[0.35em] uppercase font-light transition-opacity duration-300 hover:opacity-60" style="color:rgba(232,224,211,0.45);">See the work →</a>
+                <a href="/#contact" class="text-xs tracking-[0.35em] uppercase font-light transition-opacity duration-300 hover:opacity-60" style="color:rgba(232,224,211,0.45);">Initiate →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="px-8" style="background:radial-gradient(ellipse at 50% 0%, #251A0E 0%, #1A1108 60%);border-top:1px solid rgba(139,108,79,0.1);">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8" style="padding-top:60px;padding-bottom:60px;">
+            <div class="flex items-baseline gap-2">
+                <span class="font-serif italic text-xl tracking-wide text-white">Rosetta</span>
+                <span class="text-[9px] tracking-[0.3em] uppercase text-neutral-500 font-medium">Systems</span>
+            </div>
+            <div>
+                <a href="mailto:contact@rosettasystems.co" class="text-xs tracking-widest uppercase font-light transition-opacity duration-300 hover:opacity-60" style="color:var(--text-secondary);">contact@rosettasystems.co</a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto text-center" style="margin-bottom:20px;">
+            <p style="font-family:'Inter',sans-serif;font-weight:300;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(242,237,228,0.3);">Websites for photographers — Texas &amp; beyond.</p>
+        </div>
+        <div class="max-w-7xl mx-auto pb-8 text-center" style="border-top:1px solid rgba(139,108,79,0.08);">
+            <p class="pt-6 text-[9px] tracking-[0.35em] uppercase font-light" style="color:var(--text-secondary);">
+                © MMXXV Rosetta Systems. All rights reserved.
+                <a href="/privacy" style="margin-left:1.6em;font-family:'Inter',sans-serif;font-weight:300;font-size:inherit;letter-spacing:inherit;text-transform:inherit;color:var(--text-secondary);text-decoration:none;transition:opacity 0.3s ease;" onmouseover="this.style.opacity='0.5'" onmouseout="this.style.opacity='1'">Privacy Policy</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        (function(){
+            var nav = document.getElementById('site-nav');
+            window.addEventListener('scroll', function(){
+                nav.classList.toggle('scrolled', window.scrollY > 80);
+            }, { passive: true });
+
+            // Trigger hero reveals immediately
+            document.querySelectorAll('section:first-of-type .cinematic-reveal').forEach(function(el){
+                setTimeout(function(){ el.classList.add('visible'); }, 300);
+            });
+        })();
+    </script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.to(".hero-text-wrapper", {
+            yPercent: -20, ease: "none",
+            scrollTrigger: { trigger: ".hero-text-wrapper", start: "top top", end: "bottom top", scrub: true }
+        });
+
+        (function() {
+            var heroSection = document.querySelector('section');
+            var ctaHeadline = document.querySelector('#final-cta h2');
+            var groups = new Map();
+            document.querySelectorAll('.cinematic-reveal').forEach(function(el) {
+                if (heroSection && heroSection.contains(el)) return;
+                if (el === ctaHeadline) return;
+                var key = el.parentElement;
+                if (!groups.has(key)) groups.set(key, []);
+                groups.get(key).push(el);
+            });
+            groups.forEach(function(children, parent) {
+                gsap.fromTo(children,
+                    { opacity: 0, y: 40, filter: 'blur(12px)' },
+                    { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.2, ease: "expo.out", stagger: children.length > 1 ? 0.12 : 0,
+                      scrollTrigger: { trigger: parent, start: "top 85%", toggleActions: "play none none none" } }
+                );
+            });
+        })();
+
+        (function() {
+            var ctaHeadline = document.querySelector('#final-cta h2');
+            if (!ctaHeadline) return;
+            gsap.fromTo(ctaHeadline,
+                { opacity: 0, y: 40, filter: 'blur(12px)' },
+                { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.2, ease: "expo.out",
+                  scrollTrigger: { trigger: ctaHeadline, start: "top 85%", toggleActions: "play none none none" },
+                  onComplete: function() {
+                      gsap.to(ctaHeadline, { opacity: 0.75, duration: 2.8, ease: "sine.inOut", repeat: -1, yoyo: true });
+                  }
+                }
+            );
+        })();
+    </script>
+
+</body>
+</html>
