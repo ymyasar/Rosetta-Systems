@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8MKQVLLV7L"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8MKQVLLV7L');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Wedding Photographer Websites in 2026 | Rosetta Systems</title>
+    <meta name="description" content="Discover the best wedding photographer websites in 2026 — what they do right, how they earn bookings, and the patterns every strong site shares.">
+    <link rel="canonical" href="https://www.rosettasystems.co/blog/best-wedding-photographer-websites" />
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Rosetta Systems">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Best Wedding Photographer Websites in 2026 | Rosetta Systems">
+    <meta property="og:description" content="Discover the best wedding photographer websites in 2026 — what they do right, how they earn bookings, and the patterns every strong site shares.">
+    <meta property="og:url" content="https://www.rosettasystems.co/blog/best-wedding-photographer-websites">
+    <meta property="og:site_name" content="Rosetta Systems">
+    <meta property="og:image" content="https://www.rosettasystems.co/public/images/work/rosetta-standard-wedding-photographer-website-template.webp">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Best Wedding Photographer Websites in 2026 | Rosetta Systems">
+    <meta name="twitter:description" content="Discover the best wedding photographer websites in 2026 — what they do right, how they earn bookings, and the patterns every strong site shares.">
+    <meta name="twitter:image" content="https://www.rosettasystems.co/public/images/work/rosetta-standard-wedding-photographer-website-template.webp">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@0.383.0/dist/umd/lucide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Inter"', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                    },
+                    colors: {
+                        matte: '#1A1108',
+                        surface: '#E0D8CA',
+                        border: 'rgba(26,17,8,0.1)',
+                        warm: {
+                            DEFAULT: '#8B6C4F',
+                            glow: 'rgba(139,108,79,0.15)',
+                            strong: 'rgba(139,108,79,0.3)'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --bg-primary: #E8E0D3;
+            --bg-deep: #1A1108;
+            --bg-surface: #E0D8CA;
+            --accent: #8B6C4F;
+            --accent-light: rgba(139,108,79,0.15);
+            --text-primary: #1A1108;
+            --text-secondary: #6B5744;
+            --text-inverse: #E8E0D3;
+            --border: rgba(26,17,8,0.1);
+        }
+
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        ::selection {
+            background-color: rgba(139,108,79,0.2);
+            color: var(--accent);
+        }
+
+        /* ── Playfair logotype ── */
+        #site-nav .font-serif {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-primary);
+        }
+        footer .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        #site-nav .text-neutral-500 {
+            color: var(--text-secondary) !important;
+        }
+
+        /* ── Animations ── */
+        .cinematic-reveal {
+            opacity: 0;
+            filter: blur(12px);
+            transform: translateY(40px);
+            transition: opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+                        filter 1.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+                        transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .cinematic-reveal.visible {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateY(0);
+        }
+
+        .delay-200 { transition-delay: 200ms; }
+        .delay-400 { transition-delay: 400ms; }
+
+        /* ── Intro overlay ── */
+        #intro-overlay {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-deep);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            clip-path: inset(0 0 0 0);
+            transition: clip-path 0.8s ease-in-out;
+            pointer-events: none;
+        }
+        #intro-logo {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        /* ── Navigation ── */
+        #site-nav {
+            background: transparent;
+            border-bottom: 1px solid transparent;
+            transform: translateY(-100%);
+            transition: all 0.4s ease;
+        }
+        #site-nav.nav-visible {
+            transform: translateY(0);
+        }
+        #site-nav.scrolled {
+            background: rgba(232,224,211,0.95);
+            border-bottom: 1px solid rgba(139,108,79,0.2);
+        }
+        .nav-link {
+            color: var(--text-secondary);
+            transition: color 0.3s ease, opacity 0.3s ease;
+        }
+        #site-nav.scrolled .nav-link {
+            color: var(--text-primary);
+        }
+        .nav-link:hover {
+            opacity: 0.6;
+        }
+
+        /* ── Article layout ── */
+        .article-section {
+            padding: 140px 24px 100px;
+            background-color: var(--bg-primary);
+        }
+
+        .article-inner {
+            max-width: 720px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .article-eyebrow {
+            font-family: 'Inter', sans-serif;
+            font-size: 9px;
+            letter-spacing: 0.55em;
+            text-transform: uppercase;
+            font-weight: 300;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .article-back {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 300;
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 3rem;
+            transition: opacity 0.2s ease;
+        }
+        .article-back:hover {
+            opacity: 0.6;
+        }
+
+        .article-date {
+            font-family: 'Inter', sans-serif;
+            font-size: 9px;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            font-weight: 300;
+            color: var(--accent);
+            opacity: 0.65;
+            display: block;
+            margin-bottom: 1.25rem;
+        }
+
+        .article-h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            color: var(--text-primary);
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+            margin-bottom: 2rem;
+        }
+
+        .article-divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 2.5rem 0;
+        }
+
+        .article-intro {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.85;
+            margin-bottom: 3rem;
+        }
+
+        /* ── Section blocks ── */
+        .article-block {
+            margin-bottom: 3rem;
+        }
+
+        .article-h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-style: italic;
+            color: var(--text-primary);
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .article-body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.9;
+        }
+
+        .article-body p {
+            margin-bottom: 1.1rem;
+        }
+
+        .article-tier {
+            border-left: 2px solid var(--accent);
+            padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-tier-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            font-weight: 500;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .article-tier-body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.85;
+        }
+
+        .article-factor-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 0.4rem;
+            display: block;
+        }
+
+        .article-factor {
+            margin-bottom: 1.25rem;
+        }
+
+        /* ── CTA block ── */
+        .article-cta-block {
+            margin-top: 3.5rem;
+            padding: 3rem 2rem;
+            text-align: center;
+            background-color: var(--bg-deep);
+        }
+
+        .article-cta-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            font-style: italic;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: var(--text-inverse);
+            margin-bottom: 1.75rem;
+            line-height: 1.2;
+        }
+
+        .article-cta-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--accent);
+            color: var(--text-inverse);
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .article-cta-btn:hover {
+            opacity: 0.82;
+            transform: scale(1.02);
+        }
+    </style>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.rosettasystems.co/#business"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://www.rosettasystems.co/blog/best-wedding-photographer-websites#article",
+      "headline": "Best Wedding Photographer Websites in 2026",
+      "datePublished": "2026-07-05",
+      "dateModified": "2026-07-05",
+      "author": {"@type": "Organization", "name": "Rosetta Systems"},
+      "image": "https://www.rosettasystems.co/assets/logo.png",
+      "publisher": {"@id": "https://www.rosettasystems.co/#business"}
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What makes a wedding photographer website good in 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Speed, clarity, and credibility signals are the baseline. Beyond that, the best sites in 2026 are structured so that search engines understand who the photographer serves and where — that means location signals in copy, schema markup in the code, and a portfolio hierarchy that matches how couples actually search. A beautiful site that nobody finds is an expensive portfolio PDF."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do wedding photographers need a custom-built website, or is a DIY builder enough?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on your market and your goals. A builder like Squarespace can get you online quickly, and for a photographer still building a client base that's sometimes the right first step. But in established markets where other photographers are investing in search visibility, a DIY site built from a shared pool of designs rarely earns the rankings or the first impressions that a custom build can. The question isn't which costs less — it's which one generates more bookings per year."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much should a wedding photographer website cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A specialist-built site designed to rank typically runs $1,500–$3,000 upfront, with ongoing support in the range of $200–$500 a month. A single booked wedding from organic search covers most of that for a year. The more useful question is what your average booking is worth and what your current website is generating. If the answer is nothing, the cost of staying put is higher than the cost of fixing it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What single feature helps a photography website book more weddings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A low-friction inquiry path. The fastest booking flows reach a contact form within two clicks from the homepage, without a page reload. Every additional step between 'I want to reach out' and 'I've sent a message' loses a percentage of couples who were ready to book. Most photographer sites bury the inquiry form three levels deep and then wonder why their contact rate is low."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should a wedding photographer's site prioritise portfolio or SEO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both — and they're not in conflict when structured correctly. Strong SEO pages (like location pages or gallery sections organised by venue type) feed the portfolio by bringing couples with specific intent directly to the images most relevant to them. A site that treats SEO and portfolio as competing priorities is usually a site built in the wrong order: design-first, strategy-never. The sites that rank and convert build the architecture first, then fill it with the best possible imagery."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.rosettasystems.co/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.rosettasystems.co/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Best Wedding Photographer Websites in 2026",
+          "item": "https://www.rosettasystems.co/blog/best-wedding-photographer-websites"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+
+    <!-- Intro overlay -->
+    <div id="intro-overlay">
+        <div id="intro-logo">
+            <span style="font-family:'Playfair Display',serif;font-style:italic;font-size:2.4rem;letter-spacing:0.04em;color:#fff;line-height:1;">Rosetta</span>
+            <span style="font-family:'Inter',sans-serif;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.38);font-weight:500;">Systems</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="site-nav" class="fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
+            <a href="/" style="text-decoration:none;cursor:pointer;" class="flex items-baseline gap-2">
+                <span class="font-serif italic text-2xl tracking-wide text-white">Rosetta</span>
+                <span class="text-[10px] tracking-[0.3em] uppercase text-neutral-500 font-medium">Systems</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-10 text-xs tracking-widest uppercase font-light">
+                <a href="/services/wedding-photography-websites" class="nav-link">Wedding Sites</a>
+                <a href="/the-work" class="nav-link">The Work</a>
+                <a href="/#solution" class="nav-link">Method</a>
+                <a href="/#contact" class="nav-link">Initiate</a>
+                <a href="/blog/" class="nav-link">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-section">
+        <div class="article-inner">
+
+            <a href="/blog/" class="article-back">← Back to Blog</a>
+
+            <span class="article-date cinematic-reveal">July 2026</span>
+
+            <h1 class="article-h1">
+                Best Wedding Photographer Websites in 2026
+            </h1>
+
+            <hr class="article-divider">
+
+            <p class="article-intro cinematic-reveal delay-400">
+                The best wedding photographer websites in 2026 share almost nothing visually. Some are spare and type-forward. Some are all image. Some lean editorial, some romantic, some documentary. What they share is invisible: a structure that earns bookings. This list breaks down ten of the strongest examples — not to inspire aesthetic envy, but to show you what's working and why.
+            </p>
+
+            <!-- Phase 5 standing rule: every blog post must link to ≥1 service page AND ≥1 location page, in-body and contextual (not generic footer). -->
+
+            <!-- The Ten Sites -->
+            <div class="article-block cinematic-reveal">
+                <h2 class="article-h2">Ten sites worth studying</h2>
+
+                <div class="article-tier">
+                    <span class="article-tier-label">1. Jose Villa — josevilla.com</span>
+                    <p class="article-tier-body">The portfolio is sequenced like a magazine edit. Images are presented large and unhurried, in curated pairs rather than grids, with no thumbnails fighting for attention. The specific decision to show fewer than thirty images across the main portfolio page is what makes each one land with weight — a gallery that reads as intentional rather than comprehensive, which is exactly the impression a five-figure booking requires.</p>
+                </div>
+
+                <div class="article-tier">
+                    <span class="article-tier-label">2. KT Merry — ktmerry.com</span>
+                    <p class="article-tier-body">The proof signals here are venue-specific rather than generic. Recognition from Condé Nast Traveler sits alongside named luxury resort properties. For couples already researching those venues, this creates a direct association before first contact is made. A testimonial that names a location does quiet SEO work on top of the credibility it provides.</p>
+                </div>
+
+                <div class="article-tier">
+                    <span class="article-tier-label">3. Jasmine Star — jasminestar.com</span>
+                    <p class="article-tier-body">Her inquiry form is reachable within two clicks from the homepage, without a page reload. The friction is low enough that a couple arriving from Instagram can go from discovery to contacted in under three minutes. Most photographer websites treat the inquiry path as an afterthought and then wonder why their contact rate is low. The booking flow here is not an afterthought.</p>
+                </div>
+
+                <div class="article-tier">
+                    <span class="article-tier-label">4. Erich McVey — erichmcvey.com</span>
+                    <p class="article-tier-body">The portfolio is organised by venue context — desert elopements, coastal ceremonies, vineyard celebrations — rather than by year or season. A couple researching a specific setting lands directly on work that speaks to their vision. It's a portfolio hierarchy that doubles as quiet <a href="/services/seo-for-wedding-photographers" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(139,108,79,0.3);">search infrastructure for wedding photographers</a>, without feeling like it was built for Google.</p>
+                </div>
+
+                <div class="article-tier">
+                    <span class="article-tier-label">5. Elizabeth Messina — elizabethmessina.com</span>
+                    <p class="article-tier-body">The gallery is severely edited. Restraint here is not a design choice — it's a trust signal. Showing twenty images instead of two hundred communicates selectivity and taste in a way that a comprehensive archive never can. Couples who book Elizabeth don't need quantity as evidence. The editing itself tells them everything they need to know about how she sees.</p>
+                </div>
+
+                <div class="article-tier">
+                    <span class="article-tier-label">6. Sam Hurd — samhurd.com</span>
+                    <p class="article-tier-body">The copy and the visuals are in exact alignment. Where the imagery is experimental and layered, the words are too — specific, confident, not apologetic. Most photographer sites pair a singular visual style with generic copy borrowed from every other site in their city, and the mismatch undercuts both. Sam Hurd's site has neither problem, and couples who want that particular vision know immediately they've found the right person.</p>
+                </div>
+
+                <div class="article-tier">
+                    <span class="article-tier-label">7. Lara Hotz — larahotz.com</span>
+                    <p class="article-tier-body">The site loads fast because it's structured to. The homepage leads with type and a single editorial image before any gallery weight appears. Mobile performance holds because the heaviest content isn't front-loaded — a decision that matters more now than it did three years ago, when Google began weighting mobile speed more heavily in local search rankings. For photographers competing in dense markets, this architectural choice translates directly to visibility.</p>
+                </div>
+
+                <div class="article-tier">
+                    <span class="article-tier-label">8. Ryan Flynn — ryanflynnphotography.net</span>
+                    <p class="article-tier-body">Location signals are woven into the copy at the page level, not just the contact form. The city is named in the title tag, the opening paragraph, and several gallery captions. A photographer targeting a specific market needs that geographical anchoring to appear in local search, and Ryan Flynn's site handles it without feeling like the keywords were stuffed in after the fact. Photographers in competitive cities like <a href="/locations/wedding-photographer-websites-austin" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(139,108,79,0.3);">Austin</a> can take the same approach to anchor their site to the market they actually serve.</p>
+                </div>
+
+                <div class="article-tier">
+                    <span class="article-tier-label">9. Lauren Fair — laurenfairphotography.com</span>
+                    <p class="article-tier-body">The testimonials here name specific venues — not just "beautiful ceremony" but the actual property. That specificity does two things simultaneously: it validates Lauren's experience for couples booking those same locations, and it creates a latent signal for venue-specific and location-based search. A review that says "incredible photographer" helps no one find you. A review that names the venue quietly earns you a position in the next couple's search.</p>
+                </div>
+
+                <div class="article-tier">
+                    <span class="article-tier-label">10. Braedon Flynn — braedonflynn.com</span>
+                    <p class="article-tier-body">The navigation is reduced to four items: Portfolio, About, Pricing, Contact. No blog buried in a sub-menu, no sub-galleries three clicks deep, no archive that makes the decision harder. Couples in decision mode want to know what they'll get, who you are, what it costs, and how to reach you. Braedon's structure answers those four questions in the order couples actually ask them — and every click after that is toward a booking, not away from one.</p>
+                </div>
+            </div>
+
+            <!-- Pattern Summary -->
+            <div class="article-block cinematic-reveal">
+                <h2 class="article-h2">What every strong site shares</h2>
+
+                <div class="article-body">
+                    <p>Ten different visual styles. One underlying structure. Here are the patterns that appear across every site on this list.</p>
+                </div>
+
+                <div class="article-factor">
+                    <span class="article-factor-label">Restraint in the portfolio</span>
+                    <p class="article-tier-body">Every strong site shows fewer images than it could. Twenty carefully selected photographs communicate more authority than two hundred. Couples don't need to see everything — they need to see enough to be certain.</p>
+                </div>
+
+                <div class="article-factor">
+                    <span class="article-factor-label">A clear path to inquiry</span>
+                    <p class="article-tier-body">Contact is reachable within two clicks from anywhere on the site. No menus to hunt through, no scroll required to find the form. The booking flow is designed by someone who wanted the phone to ring, not by someone who wanted the site to look complete.</p>
+                </div>
+
+                <div class="article-factor">
+                    <span class="article-factor-label">Proof that speaks to a specific audience</span>
+                    <p class="article-tier-body">Testimonials, press mentions, and venue associations are specific. Named venues, named publications, named clients. Specificity builds trust and doubles as search signal — both in how Google reads the page and how couples emotionally process it.</p>
+                </div>
+
+                <div class="article-factor">
+                    <span class="article-factor-label">Copy aligned to visual voice</span>
+                    <p class="article-tier-body">The words match the photographs. Editorial photographers write with editorial authority. Warm documentary photographers write with warmth. The sites that feel off are the ones where generic copy has been laid over a strong visual identity.</p>
+                </div>
+
+                <div class="article-factor">
+                    <span class="article-factor-label">Location signals built in, not bolted on</span>
+                    <p class="article-tier-body">Geography is present in title tags, opening paragraphs, and gallery context — not only in footer text or a contact form dropdown. This is the difference between a site that ranks for a market and one that exists without being found by it.</p>
+                </div>
+
+                <div class="article-body" style="margin-top:1.75rem;">
+                    <p>The photographers on this list didn't arrive at these decisions by accident. Portfolio hierarchy, booking flow, local signals — these are structural choices made before a single image was uploaded. They're the reason one site earns the inquiry and the one two doors down doesn't.</p>
+                    <p>If you want your site to work the same way, the conversation starts before the design does. <a href="/#contact" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(139,108,79,0.3);">Tell us about your market and we'll show you what's possible.</a></p>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div class="article-block cinematic-reveal">
+                <h2 class="article-h2">Questions photographers ask</h2>
+
+                <div class="article-factor">
+                    <span class="article-factor-label">What makes a wedding photographer website good in 2026?</span>
+                    <p class="article-tier-body">Speed, clarity, and credibility signals are the baseline. Beyond that, the best sites are structured so search engines understand who the photographer serves and where — location signals in copy, schema markup in the code, portfolio hierarchy that maps to how couples actually search. A beautiful site that nobody finds is an expensive portfolio PDF.</p>
+                </div>
+
+                <div class="article-factor">
+                    <span class="article-factor-label">Do wedding photographers need a custom-built website, or is a DIY builder enough?</span>
+                    <p class="article-tier-body">It depends on your market and goals. A builder like Squarespace can get you online quickly, and for a photographer still building a client base that's sometimes the right first step. But in established markets where other photographers are investing in search visibility, a DIY site built from a shared pool of designs rarely earns the rankings or first impressions that a purpose-built site can. The question isn't which costs less — it's which generates more bookings per year.</p>
+                </div>
+
+                <div class="article-factor">
+                    <span class="article-factor-label">How much should a wedding photographer website cost?</span>
+                    <p class="article-tier-body">A specialist-built site designed to rank typically runs $1,500–$3,000 upfront, with ongoing support in the range of $200–$500 a month. A single booked wedding from organic search covers most of that for a year. The more useful question is what your average booking is worth and what your current site is generating. If the answer is nothing, the cost of staying put is higher than the cost of fixing it.</p>
+                </div>
+
+                <div class="article-factor">
+                    <span class="article-factor-label">What single feature helps a photography website book more weddings?</span>
+                    <p class="article-tier-body">A low-friction inquiry path. The fastest booking flows reach a contact form within two clicks from the homepage, without a page reload. Every additional step between "I want to reach out" and "I've sent a message" loses a percentage of couples who were ready to book. Most photographer sites bury the inquiry form three levels deep and then wonder why their contact rate is low.</p>
+                </div>
+
+                <div class="article-factor">
+                    <span class="article-factor-label">Should a wedding photographer's site prioritise portfolio or SEO?</span>
+                    <p class="article-tier-body">Both — and they're not in conflict when structured correctly. Strong SEO pages, like location pages or gallery sections organised by venue type, feed the portfolio by bringing couples with specific intent directly to the images most relevant to them. A site that treats portfolio and SEO as competing priorities is usually a site built in the wrong order: design-first, strategy-never. The sites that rank and convert build the architecture first, then fill it with the best possible imagery.</p>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="article-cta-block cinematic-reveal">
+                <p class="article-cta-heading">Ready to build a site that earns its keep?</p>
+                <a href="/#contact" class="article-cta-btn">Start the Conversation</a>
+            </div>
+
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="px-8" style="background:radial-gradient(ellipse at 50% 0%, #251A0E 0%, #1A1108 60%);border-top:1px solid rgba(139,108,79,0.1);">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8" style="padding-top:60px;padding-bottom:60px;">
+            <div class="flex items-baseline gap-2">
+                <span class="font-serif italic text-xl tracking-wide text-white">Rosetta</span>
+                <span class="text-[9px] tracking-[0.3em] uppercase text-neutral-500 font-medium">Systems</span>
+            </div>
+            <div>
+                <a href="mailto:contact@rosettasystems.co" class="text-xs tracking-widest uppercase font-light transition-opacity duration-300 hover:opacity-60" style="color:var(--text-secondary);">contact@rosettasystems.co</a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto text-center" style="margin-bottom:20px;">
+            <p style="font-family:'Inter',sans-serif;font-weight:300;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(242,237,228,0.3);">Websites for photographers — Texas &amp; beyond.</p>
+        </div>
+        <div class="max-w-7xl mx-auto pb-8 text-center" style="border-top:1px solid rgba(139,108,79,0.08);">
+            <p class="pt-6 text-[9px] tracking-[0.35em] uppercase font-light" style="color:var(--text-secondary);">
+                © MMXXV Rosetta Systems. All rights reserved.
+                <a href="/privacy" style="margin-left:1.6em;font-family:'Inter',sans-serif;font-weight:300;font-size:inherit;letter-spacing:inherit;text-transform:inherit;color:var(--text-secondary);text-decoration:none;transition:opacity 0.3s ease;" onmouseover="this.style.opacity='0.5'" onmouseout="this.style.opacity='1'">Privacy Policy</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        /* ── Intro animation ── */
+        (function(){
+            var overlay      = document.getElementById('intro-overlay');
+            var introLogo    = document.getElementById('intro-logo');
+            var nav          = document.getElementById('site-nav');
+            var firstSection = document.querySelector('article');
+
+            requestAnimationFrame(function(){
+                requestAnimationFrame(function(){
+                    introLogo.style.opacity = '1';
+                });
+            });
+
+            setTimeout(function(){
+                overlay.style.clipPath = 'inset(0 0 100% 0)';
+                setTimeout(function(){
+                    if (firstSection) {
+                        firstSection.querySelectorAll('.cinematic-reveal').forEach(function(el){
+                            el.classList.add('visible');
+                        });
+                    }
+                }, 200);
+            }, 1200);
+
+            setTimeout(function(){
+                overlay.style.display = 'none';
+                nav.classList.add('nav-visible');
+            }, 2000);
+        })();
+
+        /* ── Nav scroll state ── */
+        (function(){
+            var nav = document.getElementById('site-nav');
+            window.addEventListener('scroll', function(){
+                nav.classList.toggle('scrolled', window.scrollY > 80);
+            }, { passive: true });
+        })();
+    </script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        /* ── Section reveals ── */
+        (function() {
+            var firstSection = document.querySelector('article');
+
+            var groups = new Map();
+            document.querySelectorAll('.cinematic-reveal').forEach(function(el) {
+                if (firstSection && firstSection.contains(el)) return;
+                var key = el.parentElement;
+                if (!groups.has(key)) groups.set(key, []);
+                groups.get(key).push(el);
+            });
+
+            groups.forEach(function(children, parent) {
+                gsap.fromTo(children,
+                    { opacity: 0, y: 40, filter: 'blur(12px)' },
+                    {
+                        opacity: 1, y: 0, filter: 'blur(0px)',
+                        duration: 1.2,
+                        ease: 'expo.out',
+                        stagger: children.length > 1 ? 0.12 : 0,
+                        scrollTrigger: {
+                            trigger: parent,
+                            start: 'top 85%',
+                            toggleActions: 'play none none none'
+                        }
+                    }
+                );
+            });
+        })();
+    </script>
+
+</body>
+</html>
