@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8MKQVLLV7L"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8MKQVLLV7L');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO for Wedding Photographers in Texas | Complete Guide</title>
+    <meta name="description" content="The complete guide to SEO for wedding photographers in Texas — how to get found by couples searching for you, from technical foundations to local page strategy.">
+    <link rel="canonical" href="https://www.rosettasystems.co/blog/seo-for-wedding-photographers" />
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Rosetta Systems">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="SEO for Wedding Photographers in Texas | Complete Guide">
+    <meta property="og:description" content="The complete guide to SEO for wedding photographers in Texas — how to get found by couples searching for you, from technical foundations to local page strategy.">
+    <meta property="og:url" content="https://www.rosettasystems.co/blog/seo-for-wedding-photographers">
+    <meta property="og:site_name" content="Rosetta Systems">
+    <meta property="og:image" content="https://www.rosettasystems.co/public/images/work/rosetta-standard-wedding-photographer-website-template.webp">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SEO for Wedding Photographers in Texas | Complete Guide">
+    <meta name="twitter:description" content="The complete guide to SEO for wedding photographers in Texas — how to get found by couples searching for you, from technical foundations to local page strategy.">
+    <meta name="twitter:image" content="https://www.rosettasystems.co/public/images/work/rosetta-standard-wedding-photographer-website-template.webp">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@0.383.0/dist/umd/lucide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Inter"', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                    },
+                    colors: {
+                        matte: '#1A1108',
+                        surface: '#E0D8CA',
+                        border: 'rgba(26,17,8,0.1)',
+                        warm: {
+                            DEFAULT: '#8B6C4F',
+                            glow: 'rgba(139,108,79,0.15)',
+                            strong: 'rgba(139,108,79,0.3)'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --bg-primary: #E8E0D3;
+            --bg-deep: #1A1108;
+            --bg-surface: #E0D8CA;
+            --accent: #8B6C4F;
+            --accent-light: rgba(139,108,79,0.15);
+            --text-primary: #1A1108;
+            --text-secondary: #6B5744;
+            --text-inverse: #E8E0D3;
+            --border: rgba(26,17,8,0.1);
+        }
+
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        ::selection {
+            background-color: rgba(139,108,79,0.2);
+            color: var(--accent);
+        }
+
+        /* ── Playfair logotype ── */
+        #site-nav .font-serif {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-primary);
+        }
+        footer .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        #site-nav .text-neutral-500 {
+            color: var(--text-secondary) !important;
+        }
+
+        /* ── Animations ── */
+        .cinematic-reveal {
+            opacity: 0;
+            filter: blur(12px);
+            transform: translateY(40px);
+            transition: opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+                        filter 1.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+                        transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .cinematic-reveal.visible {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateY(0);
+        }
+
+        .delay-200 { transition-delay: 200ms; }
+        .delay-400 { transition-delay: 400ms; }
+
+        /* ── Intro overlay ── */
+        #intro-overlay {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-deep);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            clip-path: inset(0 0 0 0);
+            transition: clip-path 0.8s ease-in-out;
+            pointer-events: none;
+        }
+        #intro-logo {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        /* ── Navigation ── */
+        #site-nav {
+            background: transparent;
+            border-bottom: 1px solid transparent;
+            transform: translateY(-100%);
+            transition: all 0.4s ease;
+        }
+        #site-nav.nav-visible {
+            transform: translateY(0);
+        }
+        #site-nav.scrolled {
+            background: rgba(232,224,211,0.95);
+            border-bottom: 1px solid rgba(139,108,79,0.2);
+        }
+        .nav-link {
+            color: var(--text-secondary);
+            transition: color 0.3s ease, opacity 0.3s ease;
+        }
+        #site-nav.scrolled .nav-link {
+            color: var(--text-primary);
+        }
+        .nav-link:hover {
+            opacity: 0.6;
+        }
+
+        /* ── Article layout ── */
+        .article-section {
+            padding: 140px 24px 100px;
+            background-color: var(--bg-primary);
+        }
+
+        .article-inner {
+            max-width: 720px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .article-eyebrow {
+            font-family: 'Inter', sans-serif;
+            font-size: 9px;
+            letter-spacing: 0.55em;
+            text-transform: uppercase;
+            font-weight: 300;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .article-back {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 300;
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 3rem;
+            transition: opacity 0.2s ease;
+        }
+        .article-back:hover {
+            opacity: 0.6;
+        }
+
+        .article-date {
+            font-family: 'Inter', sans-serif;
+            font-size: 9px;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            font-weight: 300;
+            color: var(--accent);
+            opacity: 0.65;
+            display: block;
+            margin-bottom: 1.25rem;
+        }
+
+        .article-h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            color: var(--text-primary);
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+            margin-bottom: 2rem;
+        }
+
+        .article-divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 2.5rem 0;
+        }
+
+        .article-intro {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.85;
+            margin-bottom: 3rem;
+        }
+
+        /* ── Section blocks ── */
+        .article-block {
+            margin-bottom: 3rem;
+        }
+
+        .article-h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-style: italic;
+            color: var(--text-primary);
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .article-body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.9;
+        }
+
+        .article-body p {
+            margin-bottom: 1.1rem;
+        }
+
+        .article-tier {
+            border-left: 2px solid var(--accent);
+            padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-tier-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            font-weight: 500;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .article-tier-body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.85;
+        }
+
+        .article-factor-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 0.4rem;
+            display: block;
+        }
+
+        .article-factor {
+            margin-bottom: 1.25rem;
+        }
+
+        /* ── Location link list ── */
+        .article-location-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+        .article-location-list li {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.85;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .article-location-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* ── CTA block ── */
+        .article-cta-block {
+            margin-top: 3.5rem;
+            padding: 3rem 2rem;
+            text-align: center;
+            background-color: var(--bg-deep);
+        }
+
+        .article-cta-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            font-style: italic;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: var(--text-inverse);
+            margin-bottom: 1.75rem;
+            line-height: 1.2;
+        }
+
+        .article-cta-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--accent);
+            color: var(--text-inverse);
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .article-cta-btn:hover {
+            opacity: 0.82;
+            transform: scale(1.02);
+        }
+    </style>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.rosettasystems.co/#business"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://www.rosettasystems.co/blog/seo-for-wedding-photographers#article",
+      "headline": "SEO for Wedding Photographers in Texas: The Complete Guide",
+      "datePublished": "2026-07-05",
+      "dateModified": "2026-07-05",
+      "author": {"@type": "Organization", "name": "Rosetta Systems"},
+      "image": "https://www.rosettasystems.co/assets/logo.png",
+      "publisher": {"@id": "https://www.rosettasystems.co/#business"}
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does SEO actually work for wedding photographers, or is Instagram enough?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SEO works, and the difference between it and Instagram is intent. Instagram puts you in front of people who might love your work. Google puts you in front of couples who are actively searching for a photographer right now — they have a date, a venue, and a budget. Both channels have value, but only organic search compounds over time. A ranking page keeps earning you leads without requiring daily posts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to rank a wedding photography website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In competitive markets, expect three to six months before meaningful movement appears on targeted keywords — longer for highly contested terms like 'Austin wedding photographer.' In smaller or less contested markets, the timeline can be significantly shorter. The key variable is how many other photographers in your city are already investing in SEO. Starting earlier always wins."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between local SEO and regular SEO for photographers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Local SEO targets searches with geographic intent — queries that include a city or region, or searches where Google infers location from the user's device. For wedding photographers, this is almost all of your valuable traffic. The strategies overlap — both require technical health, quality content, and authority — but local SEO lives or dies on dedicated location pages and geographic signals embedded in your copy and code."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I really need a separate page for every city I shoot in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, if you want to rank in each of those cities. A single 'areas served' list cannot rank for every location it mentions — Google doesn't work that way. Each city is its own competitive search market, and ranking in it requires a page built specifically for it. Dedicated location pages, built with real copy, venue references, and location-specific galleries, are how you build ranking presence in multiple markets simultaneously."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a wedding photographer do this SEO themselves?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The strategy in this guide is DIY-able with time and patience — setting up Google Search Console, fixing basic speed issues, and publishing useful content doesn't require an agency. What's harder to DIY: technical implementation at scale (schema markup, Core Web Vitals, image optimisation), ongoing consistency, and competitive keyword research. If you're shooting most weekends and editing the rest of the week, the real question is what your time is worth versus what a specialist would charge."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.rosettasystems.co/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.rosettasystems.co/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SEO for Wedding Photographers in Texas: The Complete Guide",
+          "item": "https://www.rosettasystems.co/blog/seo-for-wedding-photographers"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+
+    <!-- Intro overlay -->
+    <div id="intro-overlay">
+        <div id="intro-logo">
+            <span style="font-family:'Playfair Display',serif;font-style:italic;font-size:2.4rem;letter-spacing:0.04em;color:#fff;line-height:1;">Rosetta</span>
+            <span style="font-family:'Inter',sans-serif;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.38);font-weight:500;">Systems</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="site-nav" class="fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
+            <a href="/" style="text-decoration:none;cursor:pointer;" class="flex items-baseline gap-2">
+                <span class="font-serif italic text-2xl tracking-wide text-white">Rosetta</span>
+                <span class="text-[10px] tracking-[0.3em] uppercase text-neutral-500 font-medium">Systems</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-10 text-xs tracking-widest uppercase font-light">
+                <a href="/services/wedding-photography-websites" class="nav-link">Wedding Sites</a>
+                <a href="/the-work" class="nav-link">The Work</a>
+                <a href="/#solution" class="nav-link">Method</a>
+                <a href="/#contact" class="nav-link">Initiate</a>
+                <a href="/blog/" class="nav-link">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-section">
+        <div class="article-inner">
+
+            <a href="/blog/" class="article-back">← Back to Blog</a>
+
+            <span class="article-date cinematic-reveal">July 2026</span>
+
+            <h1 class="article-h1">
+                SEO for Wedding Photographers in Texas: The Complete Guide
+            </h1>
+
+            <hr class="article-divider">
+
+            <p class="article-intro cinematic-reveal delay-400">
+                SEO for wedding photographers is not a separate strategy from running a photography business — it's what separates the photographers who get found from the ones who depend entirely on Instagram and word of mouth. Both of those channels are real and worth having. Neither of them compounds. A page that ranks earns you leads next month the same way it earns them this month, without posting every day. This guide walks through the full picture — technical foundation, local strategy, content, measurement — so you understand both what to do and why each piece matters.
+            </p>
+
+            <!-- Phase 5 standing rule: every blog post must link to ≥1 service page AND ≥1 location page, in-body and contextual. This pillar links all live location pages + SEO service page. -->
+
+            <!-- Section 1 -->
+            <div class="article-block cinematic-reveal">
+                <h2 class="article-h2">Why SEO matters for wedding photographers</h2>
+
+                <div class="article-body">
+                    <p>Instagram gets you followers. SEO gets you bookings. The difference is intent. A couple scrolling Instagram is passive — they might love your work, they might forget it by lunch. A couple searching "wedding photographer Austin" is in the market right now. They have a date, a venue, a budget, and they're actively comparing photographers. Being visible when that search happens is not the same as being visible at all.</p>
+                    <p>The other issue is ownership. An Instagram audience is rented. The platform changes the algorithm, reduces your reach, and there is nothing you can do about it. A page that ranks on Google keeps ranking without your daily attention. Referrals dry up between seasons, slow down when your network is still small, and cannot be scaled. Organic search — done right — compounds. It's the only channel in photography marketing that gets more valuable over time rather than requiring continuous reinvestment to maintain.</p>
+                    <p>That doesn't mean abandoning Instagram or stopping work on referrals. It means treating SEO as the channel that keeps working when you're not. Instagram is a spotlight. Search visibility is infrastructure.</p>
+                </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="article-block cinematic-reveal">
+                <h2 class="article-h2">How engaged couples actually search</h2>
+
+                <div class="article-body">
+                    <p>Couples don't search "wedding photographer." They search "wedding photographer in Austin," "outdoor wedding photographer Hill Country," "black and white film wedding photographer intimate ceremony." These are long-tail queries with location intent baked in. The people typing them are further along the decision process than anyone who found you on social media.</p>
+                    <p>Understanding search intent means building your site to match it. A couple searching for an Austin photographer wants to see Austin work, read about Austin venues they recognise, and find a photographer who understands their specific city. A generic "areas served" page listing fourteen cities in a paragraph does not do this. A dedicated page for each market, written with that couple in mind, does.</p>
+                    <p>There are two categories of intent worth knowing. <strong style="font-weight:500;color:var(--text-primary);">Informational intent</strong> — someone researching what a wedding photographer costs, what to look for, how far in advance to book. <strong style="font-weight:500;color:var(--text-primary);">Transactional intent</strong> — someone ready to hire and actively comparing photographers. Your blog posts serve the first. Your location and service pages serve the second. Both have a role, and both create entry points into your site from Google.</p>
+                </div>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="article-block cinematic-reveal">
+                <h2 class="article-h2">The technical foundation</h2>
+
+                <div class="article-body">
+                    <p>Before any content or local strategy pays off, the technical foundation has to be in order. These aren't advanced tactics — they're the baseline that search engines require before they'll give your site serious consideration.</p>
+                </div>
+
+                <div class="article-tier">
+                    <span class="article-tier-label">Speed</span>
+                    <p class="article-tier-body">A wedding photography site that takes more than three seconds to load on mobile is bleeding ranking potential with every visitor. Image files need to be compressed, converted to WebP, and lazy-loaded so the gallery weight isn't front-loaded on every page visit. The homepage should render something meaningful before it initiates a full gallery download.</p>
+                </div>
+
+                <div class="article-tier">
+                    <span class="article-tier-label">Mobile</span>
+                    <p class="article-tier-body">Google indexes your site's mobile version first. If it breaks on a phone — navigation that doesn't close, images that overflow the viewport, text that requires zooming — the desktop experience is irrelevant for ranking purposes. Test it on an actual device, not just a browser preview.</p>
+                </div>
+
+                <div class="article-tier">
+                    <span class="article-tier-label">Schema markup</span>
+                    <p class="article-tier-body">Structured data in the page head tells search engines exactly what your business is, where you operate, and what a given page is about. LocalBusiness and Article schema take time to implement correctly once and keep paying dividends indefinitely. Without them, your site relies entirely on Google inferring context it would rather have confirmed.</p>
+                </div>
+
+                <div class="article-tier">
+                    <span class="article-tier-label">Sitemap and canonical URLs</span>
+                    <p class="article-tier-body">A sitemap tells Google what pages exist and when they were last updated. Canonical tags tell it which version of a page is authoritative. Neither requires ongoing maintenance — they require being done correctly from the start and updated when new pages are added.</p>
+                </div>
+
+                <div class="article-body" style="margin-top:1rem;">
+                    <p>If any of this is broken on your current site, content work won't rescue it. The technical layer is the precondition for everything else. If you'd rather have someone who does this daily handle the implementation, that's what <a href="/services/seo-for-wedding-photographers" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(139,108,79,0.3);">our SEO service for wedding photographers</a> is built around.</p>
+                </div>
+            </div>
+
+            <!-- Section 4 -->
+            <div class="article-block cinematic-reveal">
+                <h2 class="article-h2">Local SEO: the location-page strategy</h2>
+
+                <div class="article-body">
+                    <p>This is where most photographers leave ranking on the table. One generic "I shoot all over Texas" page cannot rank for Austin, Dallas, Houston, Fort Worth, and San Antonio simultaneously. Google doesn't work that way. Each city is its own competitive search market, and ranking in each one requires a page built specifically for it.</p>
+                    <p>The strategy: one dedicated page per city you actively shoot in. Each page should name the city prominently in the title tag, the heading, and the opening copy. It should feature galleries from weddings in that city, mention venues couples in that area would recognise, and make clear that you know the market. A couple searching "wedding photographer Houston" should land on a page that reads as if it was written for them — not a generic page about your business with "Houston" inserted in three places.</p>
+                    <p>Here are the Texas markets with dedicated location pages, each built with local galleries, venue context, and city-specific copy:</p>
+                </div>
+
+                <ul class="article-location-list">
+                    <li><a href="/locations/wedding-photographer-websites-austin" style="color:var(--accent);text-decoration:none;font-weight:400;">Austin wedding photographers</a> — Hill Country light, downtown venues, and a competitive market where location-specific copy matters most.</li>
+                    <li><a href="/locations/wedding-photographer-websites-dallas" style="color:var(--accent);text-decoration:none;font-weight:400;">Dallas wedding photographers</a> — urban venues, upscale estates, and one of the densest wedding photography markets in the state.</li>
+                    <li><a href="/locations/wedding-photographer-websites-houston" style="color:var(--accent);text-decoration:none;font-weight:400;">Houston wedding photographers</a> — the largest city in Texas, where appearing in local search means competing for real booking volume.</li>
+                    <li><a href="/locations/wedding-photographer-websites-fort-worth" style="color:var(--accent);text-decoration:none;font-weight:400;">Fort Worth wedding photographers</a> — a distinct market from Dallas, with its own venue culture and search geography.</li>
+                    <li><a href="/locations/wedding-photographer-websites-san-antonio" style="color:var(--accent);text-decoration:none;font-weight:400;">San Antonio wedding photographers</a> — historic venues, destination weddings, and strong seasonal search patterns.</li>
+                    <li><a href="/locations/wedding-photographer-websites-texas" style="color:var(--accent);text-decoration:none;font-weight:400;">Texas wedding photographers (statewide)</a> — the hub page for photographers covering multiple Texas markets.</li>
+                </ul>
+
+                <div class="article-body">
+                    <p>A single well-built location page for one city will outrank a "we shoot everywhere" page for that city almost every time. The specificity signals relevance. The depth signals authority. And each page compounds independently — ranking in Austin doesn't prevent you from also ranking in Houston. They work in parallel.</p>
+                </div>
+            </div>
+
+            <!-- Section 5 -->
+            <div class="article-block cinematic-reveal">
+                <h2 class="article-h2">Content and authority</h2>
+
+                <div class="article-body">
+                    <p>A blog isn't busywork — it's how you build topical authority and capture informational queries that warm up your future clients. A couple who finds your post about Hill Country venues in October is going to remember you when they're ready to hire. A couple who finds your post about what to expect on wedding day is already in a trusting relationship with your brand before they've looked at your pricing.</p>
+                    <p>The formula is straightforward: write about things couples search for, write about the venues you know, answer the questions you get asked on inquiry calls. Each post is a new entry point into your site from Google — a door that, once built, stays open without further maintenance.</p>
+                    <p>Backlinks matter too, though their importance is often overstated at the local photographer level. The sources that actually move the needle: vendor features on venue blogs, credit links in styled shoots, inclusion in roundups by wedding publications and local media. These aren't difficult to earn if you're building relationships with the right vendors. A mention with a link from a well-ranked wedding venue's blog carries more ranking weight than dozens of social tags. It's a byproduct of doing the work well and being easy to credit.</p>
+                </div>
+            </div>
+
+            <!-- Section 6 -->
+            <div class="article-block cinematic-reveal">
+                <h2 class="article-h2">Google Business Profile</h2>
+
+                <div class="article-body">
+                    <p>Worth claiming. Worth keeping accurate. A Google Business Profile puts you in local search results and on Google Maps, and it's where most of your public reviews will accumulate. Reviews function as social proof and as a mild local ranking signal — couples check them, and so does Google.</p>
+                    <p>Be clear-eyed about what a GBP does and doesn't do, though. It's a local listing, not a website. It helps you appear in the map pack for nearby searches, but it can't replace a ranked page for competitive keyword terms. The couple searching "Austin wedding photographer" on Google will see both the map pack and the organic results below it. You want presence in both — and the organic results are what this guide is primarily about.</p>
+                    <p>The GBP strategy is simple: set it up, verify it, add a selection of your best work, keep contact information accurate, and collect reviews consistently from every couple you shoot. That's it. Don't over-invest time here at the expense of the website work — the website is the asset that compounds.</p>
+                </div>
+            </div>
+
+            <!-- Section 7 -->
+            <div class="article-block cinematic-reveal">
+                <h2 class="article-h2">Measuring it</h2>
+
+                <div class="article-body">
+                    <p>Two tools. Both free. Both essential.</p>
+                    <p><strong style="font-weight:500;color:var(--text-primary);">Google Search Console</strong> shows you what queries your site is appearing for, how often, and at what position. It's the most direct view into how Google reads your site. Watch impressions first — this tells you whether Google is showing your pages at all. Then watch average position. Then clicks. A page with 400 monthly impressions at position 14 is close to a breakthrough. A page with 15 impressions isn't being shown for enough relevant searches yet.</p>
+                    <p><strong style="font-weight:500;color:var(--text-primary);">Google Analytics 4</strong> shows you what happens after someone arrives. How long they stay, which pages they visit next, whether they reach the contact form. If you're getting impressions and clicks but no inquiries, the problem is on-site — conversion, not ranking. That distinction matters: it tells you whether to work on visibility or on the site itself.</p>
+                    <p>Set both up, connect them to each other, and check them once a week. You don't need a dashboard. You need to know whether your numbers are moving and in which direction. The photographers making progress are the ones who look at the data, however roughly, and adjust.</p>
+                </div>
+            </div>
+
+            <!-- Section 8 -->
+            <div class="article-block cinematic-reveal">
+                <h2 class="article-h2">The mistakes that keep photographers invisible</h2>
+
+                <div class="article-factor">
+                    <span class="article-factor-label">No local pages</span>
+                    <p class="article-tier-body">A single "contact us to learn where we travel" page, when you need a dedicated page per city. This is the most common and the most costly omission. It's also the easiest to fix if you know it's a problem.</p>
+                </div>
+
+                <div class="article-factor">
+                    <span class="article-factor-label">Slow gallery load</span>
+                    <p class="article-tier-body">An uncompressed wedding gallery initiating a full download on every page visit is the most common technical mistake on photography sites. It tanks mobile speed scores and bounces couples who arrived ready to book — often before a single image has loaded.</p>
+                </div>
+
+                <div class="article-factor">
+                    <span class="article-factor-label">Buried contact</span>
+                    <p class="article-tier-body">More than two clicks to an inquiry form. A contact page that requires hunting through a navigation menu. A form that's long, intimidating, or asks for too much upfront. Every unnecessary step between "I want to reach out" and "I've sent the message" loses a percentage of couples who were ready to book.</p>
+                </div>
+
+                <div class="article-factor">
+                    <span class="article-factor-label">No schema markup</span>
+                    <p class="article-tier-body">Google can read your page, but structured data tells it what the page actually is — a local business, a service offering, an editorial article. Without it, your site relies on Google inferring context it would rather have confirmed. Implementing schema correctly is a one-time investment that keeps paying indefinitely.</p>
+                </div>
+
+                <div class="article-factor">
+                    <span class="article-factor-label">Treating SEO as a one-time project</span>
+                    <p class="article-tier-body">A site optimised eight months ago and left untouched will slowly slide back as competitors publish, update, and build authority continuously. SEO is maintenance, not a sprint. The photographers holding their rankings in competitive Texas markets are the ones showing up consistently, not the ones who did it once and moved on.</p>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div class="article-block cinematic-reveal">
+                <h2 class="article-h2">Questions photographers ask</h2>
+
+                <div class="article-factor">
+                    <span class="article-factor-label">Does SEO actually work for wedding photographers, or is Instagram enough?</span>
+                    <p class="article-tier-body">SEO works, and the distinction is intent. Instagram puts you in front of people who might love your work. Google puts you in front of couples who are actively searching for a photographer right now — with a date, a venue, and a budget already in hand. Both channels have value, but only organic search compounds over time. A ranking page keeps earning leads without requiring daily posts.</p>
+                </div>
+
+                <div class="article-factor">
+                    <span class="article-factor-label">How long does it take to rank a wedding photography website?</span>
+                    <p class="article-tier-body">In competitive markets, expect three to six months before meaningful movement appears on targeted keywords — and longer for terms like "Austin wedding photographer" where competition is dense. In smaller or less contested markets the timeline can be significantly shorter. The key variable is how many other photographers in your city are already investing in SEO. Starting earlier always wins.</p>
+                </div>
+
+                <div class="article-factor">
+                    <span class="article-factor-label">What's the difference between local SEO and regular SEO for photographers?</span>
+                    <p class="article-tier-body">Local SEO targets searches with geographic intent — queries that include a city name, or searches where Google infers location from the user's device. For wedding photographers, this is almost all of your valuable traffic. The strategies overlap — both require technical health, quality content, and authority — but local SEO lives or dies on dedicated location pages and geographic signals embedded in copy and code.</p>
+                </div>
+
+                <div class="article-factor">
+                    <span class="article-factor-label">Do I really need a separate page for every city I shoot in?</span>
+                    <p class="article-tier-body">Yes, if you want to rank in each of those cities. A single "areas served" list cannot rank for every location it mentions — each city is its own competitive search market. Dedicated location pages, built with real copy, venue references, and location-specific galleries, are how you build ranking presence across multiple markets simultaneously. The photographers ranking well across several Texas cities are not doing it from one page.</p>
+                </div>
+
+                <div class="article-factor">
+                    <span class="article-factor-label">Can a wedding photographer do this SEO themselves?</span>
+                    <p class="article-tier-body">Yes. The strategy in this guide is DIY-able with time and patience. Setting up Google Search Console, fixing basic speed issues, publishing useful content — none of that requires an agency. What's harder to DIY: technical implementation at scale, the ongoing consistency commitment, and competitive keyword research for crowded markets. If you're shooting most weekends and editing the rest of the week, the real question is what your time is worth versus what a specialist would charge to do it correctly and continuously.</p>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="article-cta-block cinematic-reveal">
+                <p class="article-cta-heading">Want someone to do this for your site instead of your weekend?</p>
+                <a href="/#contact" class="article-cta-btn">Start the Conversation</a>
+            </div>
+
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="px-8" style="background:radial-gradient(ellipse at 50% 0%, #251A0E 0%, #1A1108 60%);border-top:1px solid rgba(139,108,79,0.1);">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8" style="padding-top:60px;padding-bottom:60px;">
+            <div class="flex items-baseline gap-2">
+                <span class="font-serif italic text-xl tracking-wide text-white">Rosetta</span>
+                <span class="text-[9px] tracking-[0.3em] uppercase text-neutral-500 font-medium">Systems</span>
+            </div>
+            <div>
+                <a href="mailto:contact@rosettasystems.co" class="text-xs tracking-widest uppercase font-light transition-opacity duration-300 hover:opacity-60" style="color:var(--text-secondary);">contact@rosettasystems.co</a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto text-center" style="margin-bottom:20px;">
+            <p style="font-family:'Inter',sans-serif;font-weight:300;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(242,237,228,0.3);">Websites for photographers — Texas &amp; beyond.</p>
+        </div>
+        <div class="max-w-7xl mx-auto pb-8 text-center" style="border-top:1px solid rgba(139,108,79,0.08);">
+            <p class="pt-6 text-[9px] tracking-[0.35em] uppercase font-light" style="color:var(--text-secondary);">
+                © MMXXV Rosetta Systems. All rights reserved.
+                <a href="/privacy" style="margin-left:1.6em;font-family:'Inter',sans-serif;font-weight:300;font-size:inherit;letter-spacing:inherit;text-transform:inherit;color:var(--text-secondary);text-decoration:none;transition:opacity 0.3s ease;" onmouseover="this.style.opacity='0.5'" onmouseout="this.style.opacity='1'">Privacy Policy</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        /* ── Intro animation ── */
+        (function(){
+            var overlay      = document.getElementById('intro-overlay');
+            var introLogo    = document.getElementById('intro-logo');
+            var nav          = document.getElementById('site-nav');
+            var firstSection = document.querySelector('article');
+
+            requestAnimationFrame(function(){
+                requestAnimationFrame(function(){
+                    introLogo.style.opacity = '1';
+                });
+            });
+
+            setTimeout(function(){
+                overlay.style.clipPath = 'inset(0 0 100% 0)';
+                setTimeout(function(){
+                    if (firstSection) {
+                        firstSection.querySelectorAll('.cinematic-reveal').forEach(function(el){
+                            el.classList.add('visible');
+                        });
+                    }
+                }, 200);
+            }, 1200);
+
+            setTimeout(function(){
+                overlay.style.display = 'none';
+                nav.classList.add('nav-visible');
+            }, 2000);
+        })();
+
+        /* ── Nav scroll state ── */
+        (function(){
+            var nav = document.getElementById('site-nav');
+            window.addEventListener('scroll', function(){
+                nav.classList.toggle('scrolled', window.scrollY > 80);
+            }, { passive: true });
+        })();
+    </script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        /* ── Section reveals ── */
+        (function() {
+            var firstSection = document.querySelector('article');
+
+            var groups = new Map();
+            document.querySelectorAll('.cinematic-reveal').forEach(function(el) {
+                if (firstSection && firstSection.contains(el)) return;
+                var key = el.parentElement;
+                if (!groups.has(key)) groups.set(key, []);
+                groups.get(key).push(el);
+            });
+
+            groups.forEach(function(children, parent) {
+                gsap.fromTo(children,
+                    { opacity: 0, y: 40, filter: 'blur(12px)' },
+                    {
+                        opacity: 1, y: 0, filter: 'blur(0px)',
+                        duration: 1.2,
+                        ease: 'expo.out',
+                        stagger: children.length > 1 ? 0.12 : 0,
+                        scrollTrigger: {
+                            trigger: parent,
+                            start: 'top 85%',
+                            toggleActions: 'play none none none'
+                        }
+                    }
+                );
+            });
+        })();
+    </script>
+
+</body>
+</html>
