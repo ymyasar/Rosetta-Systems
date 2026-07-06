@@ -262,6 +262,12 @@
             color: var(--text-secondary);
             line-height: 1.8;
         }
+        .btn-primary {
+            display: inline-block;
+            text-decoration: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .btn-primary:hover { opacity: 0.82; transform: scale(1.02); }
     </style>
     <script type="application/ld+json">
 {
@@ -353,6 +359,21 @@
 
         </div>
     </section>
+
+    <!-- Primary CTA -->
+    <section class="py-[120px] px-6 text-center grain-overlay" style="background:radial-gradient(ellipse at 50% 0%, #251A0E 0%, #1A1108 60%);border-top:1px solid rgba(139,108,79,0.12);">
+        <div class="max-w-2xl mx-auto">
+            <div class="text-[9px] tracking-[0.55em] uppercase font-light mb-12" style="color:var(--accent);">Initiate</div>
+            <h2 class="text-3xl md:text-4xl font-serif italic font-light tracking-tight mb-14" style="color:var(--text-inverse);">
+                Ready to be found?
+            </h2>
+            <a href="/#contact" class="inline-block px-12 py-5 font-light tracking-[0.4em] text-xs uppercase btn-primary" style="background:var(--accent);color:var(--text-inverse);">
+                Book your free discovery call
+            </a>
+            <p class="text-[10px] tracking-[0.3em] uppercase font-light mt-8" style="color:var(--text-secondary);">Free mockup before you commit a dollar.</p>
+        </div>
+    </section>
+    <div style="height:1px;background:rgba(242,237,228,0.15);"></div>
 
     <!-- Footer -->
     <footer class="px-8" style="background:radial-gradient(ellipse at 50% 0%, #251A0E 0%, #1A1108 60%);border-top:1px solid rgba(139,108,79,0.1);">
