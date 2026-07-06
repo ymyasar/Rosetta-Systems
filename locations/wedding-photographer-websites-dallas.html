@@ -95,28 +95,97 @@
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "Wedding Photography Website Design",
-  "provider": {
-    "@type": "Organization",
-    "name": "Rosetta Systems",
-    "url": "https://www.rosettasystems.co"
-  },
-  "areaServed": {
-    "@type": "City",
-    "name": "Dallas",
-    "containedInPlace": {
-      "@type": "State",
-      "name": "Texas"
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.rosettasystems.co/#business"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.rosettasystems.co/locations/wedding-photographer-websites-dallas#service",
+      "name": "Wedding Photography Website Design — Dallas",
+      "description": "Premium website design for wedding photographers in Dallas, TX. Fast, editorial, SEO-optimised sites that rank and convert. From $2,000.",
+      "provider": {"@id": "https://www.rosettasystems.co/#business"},
+      "areaServed": {"@type": "City", "name": "Dallas"},
+      "serviceType": "Wedding Photography Website Design"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How competitive is the Dallas market really?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Very — established studios have years of local content and strong domain authority. But most photographers here still don't have proper technical SEO foundations. A site built correctly, with real structure and ongoing content, moves faster than you'd expect in a market where the floor is still low despite the competition at the top."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I target \"Dallas\" or \"DFW\"?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both matter, but Dallas is where the search intent lives for Dallas couples. \"DFW\" is what photographers use to describe their coverage area — it's not how most couples search. We build for Dallas specifically, with Fort Worth covered separately if you need it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you work with Dallas photographers who also shoot Fort Worth?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — territory and targeting are discussed in the discovery call. If you shoot both markets, we build the location pages to cover both cities without diluting your signal in either."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's included for $2,000?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Six-page site, three service and three location pages, full technical SEO, up to 35 optimised images, one launch article, and booking integration. Everything custom-built — no templates, no page builders."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the free mockup work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We build a real homepage draft before you pay anything — a working design using your brand and photography. Then you decide."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I own the site?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The code, the domain, the content — all yours. The $100/month covers ongoing hosting, updates, and support. You own the asset outright."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.rosettasystems.co/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Texas",
+          "item": "https://www.rosettasystems.co/locations/wedding-photographer-websites-texas"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Dallas",
+          "item": "https://www.rosettasystems.co/locations/wedding-photographer-websites-dallas"
+        }
+      ]
     }
-  },
-  "description": "Premium website design for wedding photographers in Dallas, TX. Fast, editorial, SEO-optimised sites that rank and convert.",
-  "offers": {
-    "@type": "Offer",
-    "price": "2000",
-    "priceCurrency": "USD",
-    "description": "Setup from $2,000 with $100/month ongoing support"
-  }
+  ]
 }
     </script>
 </head>

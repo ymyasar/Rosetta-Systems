@@ -95,28 +95,97 @@
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "Wedding Photography Website Design",
-  "provider": {
-    "@type": "Organization",
-    "name": "Rosetta Systems",
-    "url": "https://www.rosettasystems.co"
-  },
-  "areaServed": {
-    "@type": "City",
-    "name": "Austin",
-    "containedInPlace": {
-      "@type": "State",
-      "name": "Texas"
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.rosettasystems.co/#business"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.rosettasystems.co/locations/wedding-photographer-websites-austin#service",
+      "name": "Wedding Photography Website Design — Austin",
+      "description": "Premium website design for wedding photographers in Austin, TX. Fast, editorial, SEO-optimised sites that rank and convert. From $2,000.",
+      "provider": {"@id": "https://www.rosettasystems.co/#business"},
+      "areaServed": {"@type": "City", "name": "Austin"},
+      "serviceType": "Wedding Photography Website Design"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Will this help me rank for Hill Country venues outside Austin city limits?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — location pages extend your reach beyond the city itself. If you shoot Barr Mansion, Prospect House, Contigo Ranch, or Hill Country properties, we build pages that target those specific searches alongside the broader Austin search."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Austin is getting crowded — can I still rank?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Despite the growth, most Austin photographers still lack proper technical SEO. A site built with real structure, fast load times, and the right location and venue pages can move into the top results faster than the market size suggests — especially for venue-specific searches where few photographers have any dedicated content."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you only work with Austin photographers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Photographers only, across Texas — you can see all five Texas metros here. This page is built for Austin; we do the same depth for every city we take on."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's included for $2,000?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Six-page site, three service and three location pages, full technical SEO, up to 35 optimised images, one launch article, and booking integration. Everything custom-built — no templates, no page builders."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the free mockup work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We build a real homepage draft before you pay anything — not a wireframe, an actual working design using your brand and photography. Then you decide."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I own the site?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The site is yours — the code, the domain, the content. The $100/month covers ongoing hosting, updates, and support. You're not renting space on a platform; you own the asset."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.rosettasystems.co/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Texas",
+          "item": "https://www.rosettasystems.co/locations/wedding-photographer-websites-texas"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Austin",
+          "item": "https://www.rosettasystems.co/locations/wedding-photographer-websites-austin"
+        }
+      ]
     }
-  },
-  "description": "Premium website design for wedding photographers in Austin, TX. Fast, editorial, SEO-optimised sites that rank and convert.",
-  "offers": {
-    "@type": "Offer",
-    "price": "2000",
-    "priceCurrency": "USD",
-    "description": "Setup from $2,000 with $100/month ongoing support"
-  }
+  ]
 }
     </script>
 </head>

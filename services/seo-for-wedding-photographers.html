@@ -91,21 +91,86 @@
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "SEO for Wedding Photographers",
-  "provider": {
-    "@type": "Organization",
-    "name": "Rosetta Systems",
-    "url": "https://www.rosettasystems.co"
-  },
-  "areaServed": "US",
-  "description": "Ongoing SEO for wedding photographers across the United States. Local search optimisation, monthly content, and technical monitoring built into every Rosetta retainer.",
-  "offers": {
-    "@type": "Offer",
-    "price": "100",
-    "priceCurrency": "USD",
-    "description": "$100/month retainer following $2,000 setup"
-  }
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.rosettasystems.co/#business"
+    },
+    {
+      "@type": "Service",
+      "name": "SEO for Wedding Photographers",
+      "description": "SEO built for wedding photographers — the ongoing work that gets your site ranking for the local searches couples actually make, month after month. Part of every Rosetta retainer.",
+      "provider": {"@id": "https://www.rosettasystems.co/#business"},
+      "areaServed": [
+        {"@type": "City", "name": "Austin"},
+        {"@type": "City", "name": "Dallas"},
+        {"@type": "City", "name": "Houston"},
+        {"@type": "City", "name": "San Antonio"},
+        {"@type": "City", "name": "Fort Worth"}
+      ],
+      "serviceType": "SEO for Wedding Photographers"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is SEO included in the setup or the retainer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both. The technical foundation ships with every build. The ongoing work — content, monitoring, checks — is what the $100/month covers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long until I rank?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SEO compounds over months, not days. Early movement can show in weeks; meaningful local ranking is a longer game. Anyone promising instant results is lying."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do you actually do each month?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "One article, light SEO monitoring, and a monthly performance check — plus the small ongoing tuning that keeps the site healthy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you guarantee rankings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No — and be wary of anyone who does. We guarantee the work that moves rankings, done consistently."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need this if I already have a site?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If your current site doesn't rank, a redesign plus this ongoing work is usually the fix. We'll show you a free mockup before you decide."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the free mockup work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We build a real homepage draft before you pay, so you see the standard before you commit a dollar. See the work for what that looks like in practice."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rosettasystems.co/"},
+        {"@type": "ListItem", "position": 2, "name": "SEO for Wedding Photographers", "item": "https://www.rosettasystems.co/services/seo-for-wedding-photographers"}
+      ]
+    }
+  ]
 }
     </script>
 </head>

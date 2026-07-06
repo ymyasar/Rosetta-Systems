@@ -95,28 +95,97 @@
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "Wedding Photography Website Design",
-  "provider": {
-    "@type": "Organization",
-    "name": "Rosetta Systems",
-    "url": "https://www.rosettasystems.co"
-  },
-  "areaServed": {
-    "@type": "City",
-    "name": "San Antonio",
-    "containedInPlace": {
-      "@type": "State",
-      "name": "Texas"
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.rosettasystems.co/#business"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.rosettasystems.co/locations/wedding-photographer-websites-san-antonio#service",
+      "name": "Wedding Photography Website Design — San Antonio",
+      "description": "Premium website design for wedding photographers in San Antonio, TX. Fast, editorial, SEO-optimised sites that rank and convert. From $2,000.",
+      "provider": {"@id": "https://www.rosettasystems.co/#business"},
+      "areaServed": {"@type": "City", "name": "San Antonio"},
+      "serviceType": "Wedding Photography Website Design"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Will this help me rank for specific San Antonio venues?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — venue-specific location pages target searches like \"River Walk wedding photographer\" and \"Pearl District photographer San Antonio\". These are lower-competition, higher-intent searches where a well-structured page can rank quickly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you help photographers who also shoot Hill Country destinations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — if you shoot Hill Country and SA venues, we build location pages that target both. Couples searching for Hill Country photographers often find their photographer through a San Antonio-based site with the right coverage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you only work with San Antonio photographers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Photographers only, across Texas — you can see all five Texas metros here. This page is built for San Antonio; we do the same depth for every city we take on."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's included for $2,000?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Six-page site, three service and three location pages, full technical SEO, up to 35 optimised images, one launch article, and booking integration. Everything custom-built — no templates, no page builders."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the free mockup work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We build a real homepage draft before you pay anything — a working design using your brand and photography. Then you decide."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I own the site?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The site is yours — the code, the domain, the content. The $100/month covers ongoing hosting, updates, and support. You're not renting space on a platform; you own the asset."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.rosettasystems.co/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Texas",
+          "item": "https://www.rosettasystems.co/locations/wedding-photographer-websites-texas"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "San Antonio",
+          "item": "https://www.rosettasystems.co/locations/wedding-photographer-websites-san-antonio"
+        }
+      ]
     }
-  },
-  "description": "Premium website design for wedding photographers in San Antonio, TX. Fast, editorial, SEO-optimised sites that rank and convert.",
-  "offers": {
-    "@type": "Offer",
-    "price": "2000",
-    "priceCurrency": "USD",
-    "description": "Setup from $2,000 with $100/month ongoing support"
-  }
+  ]
 }
     </script>
 </head>

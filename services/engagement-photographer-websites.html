@@ -91,21 +91,86 @@
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "Engagement Photographer Website Design",
-  "provider": {
-    "@type": "Organization",
-    "name": "Rosetta Systems",
-    "url": "https://www.rosettasystems.co"
-  },
-  "areaServed": "US",
-  "description": "Website design for engagement and couples photographers across the United States. Fast-loading, editorial, SEO-optimised sites built to rank for local engagement searches and convert sessions into wedding bookings.",
-  "offers": {
-    "@type": "Offer",
-    "price": "2000",
-    "priceCurrency": "USD",
-    "description": "Setup from $2,000 with $100/month ongoing support"
-  }
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.rosettasystems.co/#business"
+    },
+    {
+      "@type": "Service",
+      "name": "Engagement Photographer Website Design",
+      "description": "Websites for engagement and couples photographers — built to rank for local searches and turn sessions into full wedding bookings. Free mockup first.",
+      "provider": {"@id": "https://www.rosettasystems.co/#business"},
+      "areaServed": [
+        {"@type": "City", "name": "Austin"},
+        {"@type": "City", "name": "Dallas"},
+        {"@type": "City", "name": "Houston"},
+        {"@type": "City", "name": "San Antonio"},
+        {"@type": "City", "name": "Fort Worth"}
+      ],
+      "serviceType": "Engagement Photographer Website Design"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do you only work with engagement photographers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Photographers only. Engagement and couples work is a core vertical alongside wedding and elopement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's included for $2,000?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Six-page site, three service and three location SEO pages, full technical SEO, up to 35 optimised images, one launch article, booking integration."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the free mockup work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We build a real homepage draft before you pay. You react to it, then decide."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will this help me convert engagement clients into weddings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "That's how we build it — the site is structured to move a couples session toward a wedding booking, not treat it as a dead end."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will it rank me for \"engagement photographer [city]\"?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Location and service pages plus schema are aimed at exactly that. No honest guarantee on position, but this is the work that moves it. See how we handle location SEO in Texas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I own the site?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rosettasystems.co/"},
+        {"@type": "ListItem", "position": 2, "name": "Engagement Photographer Websites", "item": "https://www.rosettasystems.co/services/engagement-photographer-websites"}
+      ]
+    }
+  ]
 }
     </script>
 </head>
