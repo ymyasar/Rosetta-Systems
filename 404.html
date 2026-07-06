@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Rosetta Systems</title>
+    <meta name="description" content="The page you're looking for has moved or doesn't exist. Return to Rosetta Systems — website design for wedding photographers in Texas.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://www.rosettasystems.co/404">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Inter"', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                    },
+                    colors: {
+                        matte: '#1A1108',
+                        surface: '#E0D8CA',
+                        warm: { DEFAULT: '#8B6C4F' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --bg-primary: #E8E0D3;
+            --bg-deep: #1A1108;
+            --accent: #8B6C4F;
+            --text-primary: #1A1108;
+            --text-secondary: #6B5744;
+            --text-inverse: #E8E0D3;
+        }
+
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #site-nav {
+            background: transparent;
+            transition: background 0.4s ease;
+        }
+        #site-nav.scrolled {
+            background: rgba(232,224,211,0.92);
+            backdrop-filter: blur(12px);
+        }
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        .nav-link:hover { opacity: 0.5; }
+
+        .btn-primary {
+            display: inline-block;
+            border: 1px solid var(--text-primary);
+            text-decoration: none;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: var(--text-primary);
+            color: var(--text-inverse);
+        }
+
+        .rule-line {
+            border: none;
+            border-top: 1px solid rgba(26,17,8,0.12);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="site-nav" class="fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
+            <a href="/" style="text-decoration:none;">
+                <div class="flex items-baseline gap-2">
+                    <span class="font-serif italic text-2xl tracking-wide" style="color:var(--text-primary);">Rosetta</span>
+                    <span class="text-[10px] tracking-[0.3em] uppercase font-medium" style="color:var(--text-secondary);">Systems</span>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center space-x-10 text-xs tracking-widest uppercase font-light">
+                <a href="/services/wedding-photography-websites" class="nav-link">Wedding Sites</a>
+                <a href="/the-work" class="nav-link">The Work</a>
+                <a href="/#solution" class="nav-link">Method</a>
+                <a href="/#contact" class="nav-link">Initiate</a>
+                <a href="/blog/" class="nav-link">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 404 Content -->
+    <main class="flex-1 flex flex-col justify-center px-8 pt-28 pb-24" style="background:var(--bg-primary);">
+        <div class="max-w-2xl mx-auto w-full">
+
+            <hr class="rule-line mb-16">
+
+            <p class="text-[9px] tracking-[0.55em] uppercase font-light mb-10" style="color:var(--accent);">
+                Error — 404
+            </p>
+
+            <h1 class="text-5xl md:text-7xl font-light font-serif tracking-tight mb-10 leading-[1.08]" style="color:var(--text-primary);">
+                This page doesn't<br>
+                <span class="italic" style="color:var(--text-secondary);">exist.</span>
+            </h1>
+
+            <p class="text-base md:text-lg font-light leading-relaxed mb-16 max-w-lg" style="color:var(--text-secondary);">
+                The address you followed has moved or never existed. Good sites keep their pages tidy — try one of the links below.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-5 mb-20">
+                <a href="/" class="btn-primary px-10 py-4 font-light tracking-[0.3em] text-xs uppercase" style="color:var(--text-primary);">
+                    Return Home
+                </a>
+                <a href="/services/wedding-photography-websites" class="text-xs tracking-[0.3em] uppercase font-light self-center" style="color:var(--accent);text-decoration:none;transition:opacity 0.3s ease;" onmouseover="this.style.opacity='0.55'" onmouseout="this.style.opacity='1'">
+                    See the Work →
+                </a>
+            </div>
+
+            <hr class="rule-line mb-16">
+
+            <nav aria-label="Quick links">
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-12 list-none p-0 m-0">
+                    <li>
+                        <a href="/services/wedding-photography-websites" class="text-xs tracking-[0.28em] uppercase font-light" style="color:var(--text-secondary);text-decoration:none;transition:opacity 0.3s ease;" onmouseover="this.style.opacity='0.5'" onmouseout="this.style.opacity='1'">Wedding Photography Websites</a>
+                    </li>
+                    <li>
+                        <a href="/services/seo-for-wedding-photographers" class="text-xs tracking-[0.28em] uppercase font-light" style="color:var(--text-secondary);text-decoration:none;transition:opacity 0.3s ease;" onmouseover="this.style.opacity='0.5'" onmouseout="this.style.opacity='1'">SEO for Wedding Photographers</a>
+                    </li>
+                    <li>
+                        <a href="/the-work" class="text-xs tracking-[0.28em] uppercase font-light" style="color:var(--text-secondary);text-decoration:none;transition:opacity 0.3s ease;" onmouseover="this.style.opacity='0.5'" onmouseout="this.style.opacity='1'">The Work</a>
+                    </li>
+                    <li>
+                        <a href="/blog/" class="text-xs tracking-[0.28em] uppercase font-light" style="color:var(--text-secondary);text-decoration:none;transition:opacity 0.3s ease;" onmouseover="this.style.opacity='0.5'" onmouseout="this.style.opacity='1'">Blog</a>
+                    </li>
+                    <li>
+                        <a href="/locations/wedding-photographer-websites-texas" class="text-xs tracking-[0.28em] uppercase font-light" style="color:var(--text-secondary);text-decoration:none;transition:opacity 0.3s ease;" onmouseover="this.style.opacity='0.5'" onmouseout="this.style.opacity='1'">Texas Hub</a>
+                    </li>
+                    <li>
+                        <a href="/#contact" class="text-xs tracking-[0.28em] uppercase font-light" style="color:var(--text-secondary);text-decoration:none;transition:opacity 0.3s ease;" onmouseover="this.style.opacity='0.5'" onmouseout="this.style.opacity='1'">Initiate a Project</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="px-8" style="background:radial-gradient(ellipse at 50% 0%, #251A0E 0%, #1A1108 60%);border-top:1px solid rgba(139,108,79,0.1);">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8" style="padding-top:60px;padding-bottom:60px;">
+            <div class="flex items-baseline gap-2">
+                <span class="font-serif italic text-xl tracking-wide text-white">Rosetta</span>
+                <span class="text-[9px] tracking-[0.3em] uppercase text-neutral-500 font-medium">Systems</span>
+            </div>
+            <div>
+                <a href="mailto:contact@rosettasystems.co" class="text-xs tracking-widest uppercase font-light transition-opacity duration-300 hover:opacity-60" style="color:var(--text-secondary);">contact@rosettasystems.co</a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto text-center" style="margin-bottom:20px;">
+            <p style="font-family:'Inter',sans-serif;font-weight:300;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(242,237,228,0.3);">Websites for photographers — Texas &amp; beyond.</p>
+        </div>
+        <div class="max-w-7xl mx-auto pb-8 text-center" style="border-top:1px solid rgba(139,108,79,0.08);">
+            <p class="pt-6 text-[9px] tracking-[0.35em] uppercase font-light" style="color:var(--text-secondary);">
+                © MMXXV Rosetta Systems. All rights reserved.
+                <a href="/privacy" style="margin-left:1.6em;font-family:'Inter',sans-serif;font-weight:300;font-size:inherit;letter-spacing:inherit;text-transform:inherit;color:var(--text-secondary);text-decoration:none;transition:opacity 0.3s ease;" onmouseover="this.style.opacity='0.5'" onmouseout="this.style.opacity='1'">Privacy Policy</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        (function(){
+            var nav = document.getElementById('site-nav');
+            window.addEventListener('scroll', function(){
+                nav.classList.toggle('scrolled', window.scrollY > 80);
+            }, { passive: true });
+        })();
+    </script>
+
+</body>
+</html>
