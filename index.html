@@ -715,6 +715,28 @@
                             placeholder="Business Name & Current Challenge"></textarea>
                         <label for="message" class="absolute left-0 top-4 font-light text-lg transition-all peer-focus:-top-6 peer-focus:text-xs peer-focus:tracking-widest peer-focus:uppercase peer-valid:-top-6 peer-valid:text-xs peer-valid:tracking-widest peer-valid:uppercase pointer-events-none" style="color:var(--text-secondary);">Business Name &amp; Current Challenge</label>
                     </div>
+
+                    <div class="relative group">
+                        <select id="photography-type" name="photography_type" required
+                            class="form-field w-full bg-transparent py-4 text-lg font-light focus:outline-none peer"
+                            style="color:var(--text-inverse);">
+                            <option value="" disabled selected></option>
+                            <option value="Wedding">Wedding</option>
+                            <option value="Elopement">Elopement</option>
+                            <option value="Engagement &amp; couples">Engagement &amp; couples</option>
+                            <option value="Corporate &amp; headshots">Corporate &amp; headshots</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <label for="photography-type" class="absolute left-0 top-4 font-light text-lg transition-all peer-focus:-top-6 peer-focus:text-xs peer-focus:tracking-widest peer-focus:uppercase peer-valid:-top-6 peer-valid:text-xs peer-valid:tracking-widest peer-valid:uppercase pointer-events-none" style="color:var(--text-secondary);">What kind of photography do you shoot?</label>
+                    </div>
+
+                    <div class="relative group">
+                        <input type="text" id="city" name="city" required
+                            class="form-field w-full bg-transparent py-4 text-lg font-light focus:outline-none peer placeholder-transparent"
+                            style="color:var(--text-inverse);"
+                            placeholder="City">
+                        <label for="city" class="absolute left-0 top-4 font-light text-lg transition-all peer-focus:-top-6 peer-focus:text-xs peer-focus:tracking-widest peer-focus:uppercase peer-valid:-top-6 peer-valid:text-xs peer-valid:tracking-widest peer-valid:uppercase pointer-events-none" style="color:var(--text-secondary);">City</label>
+                    </div>
                 </div>
 
                 <button type="submit" id="submit-btn" class="w-full py-5 font-light tracking-[0.4em] text-xs uppercase btn-primary mt-8" style="background:var(--accent);color:var(--text-inverse);">
@@ -880,6 +902,8 @@
                             name: formData.get('name'),
                             email: formData.get('email'),
                             message: formData.get('message'),
+                            photography_type: formData.get('photography_type'),
+                            city: formData.get('city'),
                             subject: 'New Discovery Call Request — Rosetta Systems'
                         })
                     });
